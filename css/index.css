@@ -1,0 +1,161 @@
+body {
+    background-color: #ddd;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+
+/* Box Container */
+.box {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text color */
+    padding: 10px; /* Padding around the content */
+    text-align: left; /* Left-align the text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 0; /* Spacing above and below the box */
+    font-size: 14px; /* Font size for the text */
+}
+
+/* Optional: Styling for headings within the box */
+.box h1, .box h2, .box h3 {
+    color: #aaa; /* Lighter gray for headings */
+    margin-bottom: 15px; /* Spacing below headings */
+}
+
+/* Optional: Styling for links within the box */
+.box a {
+    color: #aaa; /* Lighter gray for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.box a:hover {
+    color: #fff; /* Change to white on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333; /* Dark gray background */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+/* Table Header Styling */
+thead {
+    background-color: #444; /* Slightly lighter gray for header */
+}
+
+thead th {
+    color: #fff; /* White text for header */
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #555; /* Border below header */
+}
+
+/* Table Body Styling */
+tbody tr {
+    background-color: #333; /* Dark gray for table rows */
+    color: #fff; /* White text for table rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #444; /* Slightly lighter gray for even rows */
+}
+
+tbody td {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+    border-bottom: 1px solid #555; /* Border between rows */
+}
+
+/* Hover Effect for Table Rows */
+tbody tr:hover {
+    background-color: #555; /* Lighter gray on hover */
+    color: #fff; /* Ensure text stays white */
+}
+
+/* Optional: Table Border Styling */
+table {
+    border: 1px solid #555; /* Border around the table */
+}
+
+table a {
+    color: #fff;
+}
+
+
+
+
+
+
+/* Logs Container */
+.logs {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 0.5;
+    /*font-size: 0.5em;*/
+    font-size: 0.7em;
+}
+
+/* Log Sections */
+.log_errors {
+    border-left: 4px solid #d9534f;
+    padding-left: 10px;
+}
+
+.log_warnings {
+    border-left: 4px solid #f0ad4e;
+    padding-left: 10px;
+}
+
+.log_messages {
+    border-left: 4px solid #30768b;
+    padding-left: 10px;
+}
+
+.log_confirmations {
+    border-left: 4px solid #13852f;
+    padding-left: 10px;
+}
+
+
+p {
+    margin: 5px 0;
+    color: #444;
+}
+
+/* Specific Log Colors */
+.log_errors p {
+    color: #d9534f;
+}
+
+.log_warnings p {
+    color: #f0ad4e;
+}
+
+.log_messages p {
+    color: #30768b;
+}
+
+.log_confirmations p {
+    color: #13852f;
+}

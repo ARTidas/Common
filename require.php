@@ -9,17 +9,21 @@
          * ********************************************************/
         require(RequestHelper::$common_file_root . '/models/bos/mariadb_database_connection_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/abstract_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/user_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/password_bo.php');
 
         /* ********************************************************
          * *** Data Access Objects ********************************
          * ********************************************************/
         require(RequestHelper::$common_file_root . '/models/daos/abstract_dao.php');
+        require(RequestHelper::$common_file_root . '/models/daos/user_dao.php');
 
         /* ********************************************************
          * *** Data Objects ***************************************
          * ********************************************************/
         require(RequestHelper::$common_file_root . '/models/dos/view_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/abstract_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/user_do.php');
 
         /* ********************************************************
          * *** Helpers ********************************************
@@ -40,5 +44,8 @@
 	 * *** Views **********************************************
 	 * ********************************************************/
     require(RequestHelper::$common_file_root . '/views/abstract_view.php');
+    require(RequestHelper::$common_file_root . '/views/project_abstract_view.php');
+    require(RequestHelper::$common_file_root . '/views/index_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_list_view.php');
 
 ?>

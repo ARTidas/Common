@@ -15,14 +15,30 @@
                 return false;
             }
 
-			return ($this->dao)->create(
+            $password_bo        = new PasswordBo();
+            $do->password_salt  = $password_bo->getNewSalt();
+            $user_dao_last_insert_id = $this->dao->create(
 				[
-                    $do->task_type_id,
-					$do->name,
-                    $do->description,
-                    $do->script
+                    $do->email
 				]
-			);
+            );
+
+            $password_dao_last_insert_id = $this->dao->createPassword(
+				[
+                    $user_dao_last_insert_id,
+					$password_bo->getHash(
+                        $do->password,
+                        $do->password_salt,
+                        PasswordBo::PEPPER
+                    ),
+                    $do->password_salt
+				]
+            );
+
+            LogHelper::addConfirmation('Created user record with id: #' . $user_dao_last_insert_id);
+            LogHelper::addConfirmation('Created password record with id: #' . $password_dao_last_insert_id);
+
+			return $user_dao_last_insert_id;
 		}
 
 		/* ********************************************************

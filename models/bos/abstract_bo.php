@@ -33,6 +33,12 @@
                     }
                 }
             }
+
+			if (isset($do->password) && isset($do->password_again)) {
+				if ($do->password !== $do->password_again) {
+					LogHelper::addWarning('Password and retyped password does not match!');
+				}
+			}
 		}
 
         /* ********************************************************

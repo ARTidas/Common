@@ -13,7 +13,10 @@
          * ********************************************************/
         public static function isAttributeRequiredForList($input) {
             if (
-				$input === 'class_actor'
+				$input === 'class_actor' ||
+				$input === 'password' ||
+				$input === 'password_again' ||
+				$input === 'password_salt'
 			) {
 				return false;
 			}
@@ -44,6 +47,7 @@
             if (
 				$input === 'class_actor' ||
 				$input === 'last_executed_at' ||
+				$input === 'password_salt' ||
 				$input === 'id' ||
 				$input === 'is_active' ||
 				$input === 'created_at' ||

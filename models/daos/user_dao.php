@@ -47,6 +47,50 @@
 			}
 		}
 
+        /* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function createPassword(array $parameters) {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				INSERT INTO
+					common.user_passwords
+				SET
+                    user_id                 = ?,
+                    hash                    = ?,
+                    salt                    = ?,
+					is_active 				= 1,
+					created_at				= NOW(),
+					updated_at 				= NOW()
+			";
+
+			try {
+				$database_connection = ($this->database_connection_bo)->getConnection();
+
+				$database_connection
+					->prepare($query_string)
+					->execute(
+						(
+							array_map(
+								function($value) {
+									return $value === '' ? NULL : $value;
+								},
+								$parameters
+							)
+						)
+					)
+				;
+
+				return(
+					$database_connection->lastInsertId()
+				);
+			}
+			catch(Exception $exception) {
+				LogHelper::addError('ERROR: ' . $exception->getMessage());
+
+				return false;
+			}
+		}
+
 		/* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/

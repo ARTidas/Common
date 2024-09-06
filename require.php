@@ -47,5 +47,6 @@
     require(RequestHelper::$common_file_root . '/views/project_abstract_view.php');
     require(RequestHelper::$common_file_root . '/views/index_view.php');
     require(RequestHelper::$common_file_root . '/views/user_list_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_create_view.php');
 
 ?>

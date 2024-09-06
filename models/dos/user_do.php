@@ -9,6 +9,7 @@
         public $password;
         public $password_again;
         public $password_salt;
+        public $password_hash;
 
     }
 

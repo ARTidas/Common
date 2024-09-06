@@ -102,7 +102,10 @@
         public function displayContent() {
 			?>
 				<div class="main_container">
-                    <p>Main container</p>
+                    <h1>
+                        <?php print(RequestHelper::$actor_class_name); ?>
+                        <?php print(RequestHelper::$actor_action); ?>
+                    </h1>
                 </div>
                 <hr />
 			<?php

@@ -163,6 +163,50 @@
 				return false;
 			}
 		}
+
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function getByEmail(array $parameters) {
+			//TODO: Abstract the parameter name... 
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				SELECT
+					USERS.id 		        AS id,
+                    USERS.email       		AS email,
+					USER_PASSWORDS.salt		AS password_salt,
+					USER_PASSWORDS.hash		AS password_hash,
+                    USERS.is_active 	    AS is_active,
+                    USERS.created_at        AS created_at,
+                    USERS.updated_at        AS updated_at
+				FROM
+					common.users USERS
+					INNER JOIN common.user_passwords USER_PASSWORDS
+						ON USERS.id = USER_PASSWORDS.user_id
+				WHERE
+					USERS.email = ?
+				LIMIT 1
+			";
+
+			try {
+				$handler = ($this->database_connection_bo)->getConnection();
+				$statement = $handler->prepare($query_string);
+				$statement->execute(
+					array_map(
+						function($value) {
+							return $value === '' ? NULL : $value;
+						},
+						$parameters
+					)
+				);
+				
+				return $statement->fetchAll(PDO::FETCH_ASSOC)[0];
+			}
+			catch(Exception $exception) {
+				LogHelper::addError('Error: ' . $exception->getMessage());
+
+				return false;
+			}
+		}
 		
 	}
 ?>

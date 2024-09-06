@@ -3,7 +3,7 @@
 	/* ********************************************************
 	 * ********************************************************
 	 * ********************************************************/
-	class UserCreateView extends ProjectAbstractView {
+	class UserLoginView extends ProjectAbstractView {
 
         /* ********************************************************
          * ********************************************************
@@ -34,7 +34,7 @@
 
                     <?php
                         foreach ($this->do->do->getAttributes() as $key => $value) {
-                            if (ActorHelper::isAttributeRequiredForCreation($key)) {
+                            if (ActorHelper::isAttributeRequiredForLogin($key)) {
                                 if ($key === 'password' || $key === 'password_again') {
                                     ?>
                                         <div>
@@ -63,7 +63,7 @@
                         }
                     ?>
 
-                    <input type="submit" name="create" value="Create" />
+                    <input type="submit" name="login" value="Login" />
                 </form>
 			<?php
 		}

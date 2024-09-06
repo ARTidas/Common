@@ -48,6 +48,7 @@
 				$input === 'class_actor' ||
 				$input === 'last_executed_at' ||
 				$input === 'password_salt' ||
+				$input === 'password_hash' ||
 				$input === 'id' ||
 				$input === 'is_active' ||
 				$input === 'created_at' ||
@@ -73,5 +74,19 @@
 
 			return true;
         }
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForLogin($input) {
+			if (
+				$input === 'email' ||
+				$input === 'password'
+			) {
+				return true;
+			}
+
+			return false;
+		}
 
     }

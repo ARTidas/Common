@@ -31,12 +31,27 @@
         /* ********************************************************
          * ********************************************************
          * ********************************************************/
-        public function getHash($password, $salt, $pepper) {
+        public function getHash($password, $salt) {
             return password_hash(
-                (
-                    $pepper . $password . $salt
-                ),
+                $this->getSaltedPepperedPassword($password, $salt),
                 PASSWORD_BCRYPT
+            );
+        }
+
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public function getSaltedPepperedPassword($password, $salt) {
+            return (self::PEPPER . $password . $salt);
+        }
+
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public function verifyPassword($password, $salt, $hash) {
+            return password_verify(
+                $this->getSaltedPepperedPassword($password, $salt),
+                $hash
             );
         }
 

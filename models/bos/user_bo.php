@@ -15,9 +15,9 @@
                 return false;
             }
 
-            $password_bo        = new PasswordBo();
-            $do->password_salt  = $password_bo->getNewSalt();
-            $user_dao_last_insert_id = $this->dao->create(
+            $password_bo                = new PasswordBo();
+            $do->password_salt          = $password_bo->getNewSalt();
+            $user_dao_last_insert_id    = $this->dao->create(
 				[
                     $do->email
 				]
@@ -28,8 +28,7 @@
                     $user_dao_last_insert_id,
 					$password_bo->getHash(
                         $do->password,
-                        $do->password_salt,
-                        PasswordBo::PEPPER
+                        $do->password_salt
                     ),
                     $do->password_salt
 				]
@@ -44,24 +43,34 @@
 		/* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/
-		public function update(AbstractDo $do) {
-            $this->validateDo($do);
+		public function login(AbstractDo $do) {
+            $this->validateDoForLogin($do);
 
-            if (!$this->isDoValid($do)) {
+            if (!$this->isDoValidForLogin($do)) {
                 return false;
             }
+            $do = $this->do_factory->get($this->actor_name, $this->dao->getByEmail([$do->email]));
+            if (isset($do->id)) {
+                LogHelper::addMessage('Found user with id: #' . $do->id);
 
-			return ($this->dao)->update(
-				[
-					$do->task_type_id,
-					$do->name,
-                    $do->description,
-                    $do->script,
-					$do->is_active,
-                    $do->last_executed_at,
-					$do->id
-				]
-			);
+                $password_bo = new PasswordBo();
+                if (                    
+                    $password_bo->verifyPassword(
+                        $_POST['password'],
+                        $do->password_salt,
+                        $do->password_hash
+                    )
+                ) {
+                    LogHelper::addConfirmation('Login successfull!');
+                }
+                else {
+                    LogHelper::addWarning('Incorrect password!');
+                }
+            }
+            else {
+                LogHelper::addWarning('Was not able to find account for: ' . $_POST['email']);
+            }
+            
 		}
 
     }

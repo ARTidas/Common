@@ -6,6 +6,7 @@
 	abstract class AbstractBo {
 
         protected $dao;
+		protected $do_factory;
 
         public $actor_name;
 
@@ -20,6 +21,8 @@
                     $this->actor_name
                 )
             );
+
+			$this->do_factory = new DoFactory();
 		}
 
 		/* ********************************************************
@@ -57,6 +60,35 @@
             return true;
 		}
 
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function validateDoForLogin(AbstractDo $do) {
+			foreach ($do->getAttributes() as $key => $value) {
+                if (ActorHelper::isAttributeRequiredForLogin($key)) {
+                    if (empty($value)) {
+                        LogHelper::addWarning('Please fill out the following attribute: ' . $key);
+                    }
+                }
+            }
+		}
+
+        /* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function isDoValidForLogin(AbstractDo $do) {
+			foreach ($do->getAttributes() as $key => $value) {
+                if (ActorHelper::isAttributeRequiredForLogin($key)) {
+                    if (empty($value)) {
+                        
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+		}
+
         /* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/
@@ -83,7 +115,6 @@
 		 * ********************************************************
 		 * ********************************************************/
 		public function getList() {
-			$do_factory = new DoFactory();
 			$do_list = [];
 			
 			$records = $this->dao->getList();
@@ -93,7 +124,7 @@
 			}
 			else {
 				foreach ($records as $record) {
-					$do_list[] = $do_factory->get($this->actor_name, $record);
+					$do_list[] = $this->do_factory->get($this->actor_name, $record);
 				}
 			}
 			
@@ -120,6 +151,7 @@
 			
 			return $do;
 		}
+
 
     }
 

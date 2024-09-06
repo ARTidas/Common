@@ -15,6 +15,7 @@
 
 				<h2>TODO</h2>
                 <ol>
+                    <li>Make PHP mail function work</li>
                     <li>Get it done...
                         <ol>
                             <li>Without bugs...</li>

@@ -25,7 +25,8 @@
                             <button>User</button>
                             <div>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/user/list">List</a>
-                                <a href="<?php print(RequestHelper::$url_root); ?>/user/create">Create</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/user/create">Register</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/user/login">Login</a>
                                 <!-- <a href="<?php print(RequestHelper::$url_root); ?>/task_type/modify">Modify</a> -->
                             </div>
                         </div>

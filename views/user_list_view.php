@@ -10,7 +10,10 @@
          * ********************************************************/
         public function displayContent() {
 			?>
-                <h1><?php print(RequestHelper::$actor_class_name); ?> list</h1>
+                <h1>
+                    <?php print(RequestHelper::$actor_class_name); ?>
+                    <?php print(RequestHelper::$actor_action); ?>
+                </h1>
 
 				<table>
                     <thead>

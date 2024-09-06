@@ -17,25 +17,32 @@
 
             $password_bo                = new PasswordBo();
             $do->password_salt          = $password_bo->getNewSalt();
-            $user_dao_last_insert_id    = $this->dao->create(
-				[
-                    $do->email
-				]
-            );
+            $user_dao_last_insert_id    = $this->dao->create([$do->email]);
 
-            $password_dao_last_insert_id = $this->dao->createPassword(
-				[
-                    $user_dao_last_insert_id,
-					$password_bo->getHash(
-                        $do->password,
+            if ($user_dao_last_insert_id) {
+                LogHelper::addConfirmation('Created user record with id: #' . $user_dao_last_insert_id);
+
+                $password_dao_last_insert_id = $this->dao->createPassword(
+                    [
+                        $user_dao_last_insert_id,
+                        $password_bo->getHash(
+                            $do->password,
+                            $do->password_salt
+                        ),
                         $do->password_salt
-                    ),
-                    $do->password_salt
-				]
-            );
+                    ]
+                );
 
-            LogHelper::addConfirmation('Created user record with id: #' . $user_dao_last_insert_id);
-            LogHelper::addConfirmation('Created password record with id: #' . $password_dao_last_insert_id);
+                if ($password_dao_last_insert_id) {
+                    LogHelper::addConfirmation('Created password record with id: #' . $password_dao_last_insert_id);
+                }
+                else {
+                    LogHelper::addWarning('Failed to create user password!');
+                }
+            }
+            else {
+                LogHelper::addWarning('Failed to create user registration!');
+            }
 
 			return $user_dao_last_insert_id;
 		}

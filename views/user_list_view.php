@@ -20,7 +20,7 @@
                         <tr>
                             <?php
                                 foreach ((new (RequestHelper::$actor_class_name . 'Do'))->getAttributes() as $key => $value) {
-                                    if (ActorHelper::isAttributeRequiredForList($key)) {
+                                    if (ActorHelper::isAttributeRequiredForUserList($key)) {
                                         print('<th>' . $key . '</th>');
                                     }
                                 }
@@ -32,7 +32,7 @@
                             foreach ($this->do->do_list as $do) {
                                 print('<tr>');
                                     foreach ($do->getAttributes() as $key => $value) {
-                                        if (ActorHelper::isAttributeRequiredForList($key)) {
+                                        if (ActorHelper::isAttributeRequiredForUserList($key)) {
                                             print('<td>' . $value . '</td>');
                                         }
                                     }

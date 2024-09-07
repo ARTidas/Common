@@ -10,11 +10,11 @@
          * ********************************************************/
         public function displayMenu() {
 			?>
-                <div class="box">
+                <!-- <div class="box">
                     <?php
                         print(RequestHelper::$project_name . ' > ' . RequestHelper::$actor_name . ' > ' . RequestHelper::$actor_action);
                     ?>
-                </div>
+                </div> -->
 
 				<section id="menu">
                     <nav>
@@ -33,11 +33,7 @@
                         </div>
 
                         <div>
-                            <button>User profile</button>
-                            <div>
-                                <a href="<?php print(RequestHelper::$url_root); ?>/user_profile/view">View</a>
-                                <a href="<?php print(RequestHelper::$url_root); ?>/user_profile/modify">Modify</a>
-                            </div>
+                            <a href="<?php print(RequestHelper::$url_root); ?>/user_profile/view">Profile</a>
                         </div>
 
                     </nav>

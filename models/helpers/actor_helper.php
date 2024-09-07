@@ -17,12 +17,48 @@
 				$input === 'class_actor' ||
 				$input === 'password' ||
 				$input === 'password_again' ||
-				$input === 'password_salt'
+				$input === 'password_salt' ||
+				$input === 'password_hash'
 			) {
 				return false;
 			}
 
 			return true;
+        }
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function isAttributeRequiredForUserList($input) {
+            if (
+				$input === 'class_actor' ||
+				$input === 'password' ||
+				$input === 'password_again' ||
+				$input === 'password_salt' ||
+				$input === 'password_hash' ||
+				$input === 'is_active' ||
+				$input === 'created_at' ||
+				$input === 'updated_at'
+			) {
+				return false;
+			}
+
+			return true;
+        }
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function isAttributeRequiredForView($input) {
+            if (
+				$input === 'name' ||
+				$input === 'neptun_code' ||
+				$input === 'phone'
+			) {
+				return true;
+			}
+
+			return false;
         }
 
 		/* ********************************************************
@@ -64,6 +100,21 @@
 		/* ********************************************************
          * ********************************************************
          * ********************************************************/
+        public static function isAttributeRequiredForUserCreation($input) {
+            if (
+				$input === 'email' ||
+				$input === 'password' ||
+				$input === 'password_again'
+			) {
+				return true;
+			}
+
+			return false;
+        }
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
         public static function isAttributeRequiredForModification($input) {
             if (
 				$input === 'class_actor' ||
@@ -89,5 +140,20 @@
 
 			return false;
 		}
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function isAttributeRequiredForUserRegistration($input) {
+            if (
+				$input === 'email' ||
+				$input === 'password' ||
+				$input === 'password_again'
+			) {
+				return true;
+			}
+
+			return false;
+        }
 
     }

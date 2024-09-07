@@ -34,7 +34,7 @@
 
                     <?php
                         foreach ($this->do->do->getAttributes() as $key => $value) {
-                            if (ActorHelper::isAttributeRequiredForCreation($key)) {
+                            if (ActorHelper::isAttributeRequiredForUserRegistration($key)) {
                                 if ($key === 'password' || $key === 'password_again') {
                                     ?>
                                         <div>

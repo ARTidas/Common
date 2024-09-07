@@ -11,6 +11,10 @@
         public $password_salt;
         public $password_hash;
 
+        public $name;
+        public $neptun_code;
+        public $phone;
+
     }
 
 ?>

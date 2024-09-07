@@ -1,23 +1,27 @@
 <?php
 
-    //TODO: Retrieve user profile record...
-    //$do = $bo->get();
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: ' . RequestHelper::$url_root . '/user/login');
+        exit();
+    }
 
-    $view = new (RequestHelper::$actor_class_name . ucfirst(RequestHelper::$actor_action) . 'View')(
-        new ViewDo(
-            RequestHelper::$project_name . ' > ' . RequestHelper::$actor_name . ' > ' . RequestHelper::$actor_action,
-            'DESCRIPTION - ' . RequestHelper::$project_name . ' > ' . RequestHelper::$actor_name . ' > ' . RequestHelper::$actor_action,
-            null,
-            null //Here comes the user profile do...
-        ),
-    );
+	//$bo = $bo_factory->get(StringHelper::toPascalCase(RequestHelper::$actor_name));
+    $bo = $bo_factory->get(ActorHelper::USER);
+    $do = $bo->get($_SESSION['user_id']);
 
-    $view->displayHTMLOpen();
-    $view->displayHeader();
-    $view->displayMenu();
-    $view->displayContent();
-    $view->displayFooter();
-    $view->displayLogs();
-    $view->displayHTMLClose();
+	/* ********************************************************
+	 * *** Lets control exectution by actor action... *********
+	 * ********************************************************/
+	switch (RequestHelper::$actor_action) {
+		case '':
+			RequestHelper::addError('No actor action detected...');
+			break;
+		default:
+			require(
+				RequestHelper::$file_root . '/controllers/' .
+				RequestHelper::$actor_name . '_' . 
+				RequestHelper::$actor_action . '_controller.php'
+			);
+	}
 
 ?>

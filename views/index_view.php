@@ -15,13 +15,23 @@
 
 				<h2>TODO</h2>
                 <ol>
+                    <li>Create a birthday calendar</li>
+                    <li>I18N...</li>
                     <li>Make PHP mail function work</li>
-                    <li>Get it done...
+                    <li>Issue/Bug/Error reporter</li>
+                    <li>Implement a password mask for increased security</li>
+                    <li>Send email verification upon registration</li>
+                    <li>Create a forgotten password process</li>
+                    <li>Create a knowledge center
                         <ol>
-                            <li>Without bugs...</li>
-                            <li>Preferrably with test cases...</li>
+                            <li>Useful links</li>
                         </ol>
                     </li>
+                </ol>
+
+                <h2>Q&A</h2>
+                <ol>
+                    <li>Should emails be restricted to the unithe.hu emails only?</li>
                 </ol>
 			<?php
 		}

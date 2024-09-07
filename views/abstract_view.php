@@ -51,6 +51,11 @@
 			?>
 				<div class="head_container">
                     <h1><?php print(RequestHelper::$project_name); ?></h1>
+                    <?php
+                        if (isset($_SESSION['user_id'])) {
+                            print('<p>Hello user#' . $_SESSION['user_id'] . '</p>');
+                        }
+                    ?>
                 </div>
 			<?php
 		}

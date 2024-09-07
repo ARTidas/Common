@@ -47,6 +47,50 @@
 			}
 		}
 
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function createPassword(array $parameters) {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				INSERT INTO
+					common.user_passwords
+				SET
+                    user_id                 = ?,
+					hash					= ?,
+					salt					= ?,
+					is_active 				= 1,
+					created_at				= NOW(),
+					updated_at 				= NOW()
+			";
+
+			try {
+				$database_connection = ($this->database_connection_bo)->getConnection();
+
+				$database_connection
+					->prepare($query_string)
+					->execute(
+						(
+							array_map(
+								function($value) {
+									return $value === '' ? NULL : $value;
+								},
+								$parameters
+							)
+						)
+					)
+				;
+
+				return(
+					$database_connection->lastInsertId()
+				);
+			}
+			catch(Exception $exception) {
+				LogHelper::addError('ERROR: ' . $exception->getMessage());
+
+				return false;
+			}
+		}
+
         /* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/
@@ -140,15 +184,22 @@
 		public function getList() {
 			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
 				SELECT
-                    MAIN.id 		        AS id,
-                    MAIN.email              AS email,
-                    MAIN.is_active 	        AS is_active,
-                    MAIN.created_at         AS created_at,
-                    MAIN.updated_at         AS updated_at
+					USERS.id 					AS id,
+					USERS.email 				AS email,
+					USERS.is_active 			AS is_active,
+					USERS.created_at 			AS created_at,
+					USERS.updated_at 			AS updated_at,
+					USER_PROFILES.name 			AS name,
+					USER_PROFILES.neptun_code   AS neptun_code,
+					USER_PROFILES.phone 		AS phone
 				FROM
-					common.users MAIN
+					common.users USERS
+					LEFT JOIN common.user_profiles USER_PROFILES
+						ON USERS.id = USER_PROFILES.user_id AND
+						USER_PROFILES.is_active = 1
 				WHERE
-					MAIN.is_active = 1
+					USERS.is_active = 1
+				;
 			";
 
 			try {
@@ -171,19 +222,22 @@
 		public function get(array $parameters) {
 			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
 				SELECT
-					MAIN.id 		        AS id,
-                    MAIN.task_type_id       AS task_type_id,
-                    MAIN.name               AS name,
-                    MAIN.description        AS description,
-                    MAIN.last_executed_at   AS last_executed_at,
-                    MAIN.script             AS script,
-                    MAIN.is_active 	        AS is_active,
-                    MAIN.created_at         AS created_at,
-                    MAIN.updated_at         AS updated_at
+					USERS.id 					AS id,
+					USERS.email 				AS email,
+					USERS.is_active 			AS is_active,
+					USERS.created_at 			AS created_at,
+					USERS.updated_at 			AS updated_at,
+					USER_PROFILES.name 			AS name,
+					USER_PROFILES.neptun_code 	AS neptun_code,
+					USER_PROFILES.phone 		AS phone
 				FROM
-					tasks MAIN
+					common.users USERS
+					LEFT JOIN common.user_profiles USER_PROFILES
+						ON USERS.id = USER_PROFILES.user_id  AND
+		   				   USER_PROFILES.is_active = 1
 				WHERE
-					MAIN.id = ?
+					USERS.id = ?
+				;
 			";
 
 			try {
@@ -250,6 +304,72 @@
 				return false;
 			}
 		}
+
+		
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function deActivateProfiles(AbstractDo $do) {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				UPDATE
+					common.user_profiles USER_PROFILES
+				SET
+					USER_PROFILES.is_active		= 0,
+					USER_PROFILES.updated_at 	= NOW()
+				WHERE
+					USER_PROFILES.user_id 		= :user_id AND
+					USER_PROFILES.is_active		= 1
+			";
+
+			try {
+                $handler = $this->database_connection_bo->getConnection();
+                $statement = $handler->prepare($query_string);
+                $statement->bindValue(':user_id', $do->id, PDO::PARAM_INT);
+                $statement->execute();
+        
+                return true;
+            } catch (Exception $exception) {
+                LogHelper::addError('Error: ' . $exception->getMessage());
+        
+                return false;
+            }
+		}
+
+
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function createProfile(AbstractDo $do) {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				INSERT INTO
+					common.user_profiles
+				SET
+					user_id 		= :user_id,
+                    name            = :name,
+					neptun_code 	= :neptun_code,
+					phone			= :phone,
+					is_active		= 1,
+					created_at 		= NOW(),
+					updated_at 		= NOW()
+			";
+
+			try {
+                $handler = $this->database_connection_bo->getConnection();
+                $statement = $handler->prepare($query_string);
+                $statement->bindValue(':user_id', $do->id, PDO::PARAM_INT);
+				$statement->bindValue(':name', $do->name, PDO::PARAM_STR);
+				$statement->bindValue(':neptun_code', $do->neptun_code, PDO::PARAM_STR);
+				$statement->bindValue(':phone', $do->phone, PDO::PARAM_STR);
+                $statement->execute();
+        
+                return $handler->lastInsertId();
+            } catch (Exception $exception) {
+                LogHelper::addError('Error: ' . $exception->getMessage());
+        
+                return false;
+            }
+		}
+
 		
 	}
 ?>

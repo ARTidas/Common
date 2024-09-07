@@ -11,6 +11,7 @@
         require(RequestHelper::$common_file_root . '/models/bos/abstract_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/user_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/password_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/security_bo.php');
 
         /* ********************************************************
          * *** Data Access Objects ********************************
@@ -49,5 +50,6 @@
     require(RequestHelper::$common_file_root . '/views/user_list_view.php');
     require(RequestHelper::$common_file_root . '/views/user_create_view.php');
     require(RequestHelper::$common_file_root . '/views/user_login_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_profile_view_view.php');
 
 ?>

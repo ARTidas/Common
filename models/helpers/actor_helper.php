@@ -5,7 +5,8 @@
 	 * ********************************************************/
 	class ActorHelper {
 
-        const TASK = 'Task';
+		const USER 		= 'User';
+        const TASK 		= 'Task';
         const TASK_TYPE = 'TaskType';
 
 		/* ********************************************************

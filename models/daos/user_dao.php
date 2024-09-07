@@ -50,17 +50,60 @@
         /* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/
-		public function createPassword(array $parameters) {
+		public function createLogin(array $parameters) {
 			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
 				INSERT INTO
-					common.user_passwords
+					common.user_logins
 				SET
                     user_id                 = ?,
-                    hash                    = ?,
-                    salt                    = ?,
+					session_id				= ?,
+                    request_details         = ?,
 					is_active 				= 1,
 					created_at				= NOW(),
 					updated_at 				= NOW()
+			";
+
+			try {
+				$database_connection = ($this->database_connection_bo)->getConnection();
+
+				$database_connection
+					->prepare($query_string)
+					->execute(
+						(
+							array_map(
+								function($value) {
+									return $value === '' ? NULL : $value;
+								},
+								$parameters
+							)
+						)
+					)
+				;
+
+				return(
+					$database_connection->lastInsertId()
+				);
+			}
+			catch(Exception $exception) {
+				LogHelper::addError('ERROR: ' . $exception->getMessage());
+
+				return false;
+			}
+		}
+
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function deleteLogin(array $parameters) {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				UPDATE
+					common.user_logins
+				SET
+					is_active 				= 0,
+					updated_at 				= NOW()
+				WHERE
+					user_id 				= ? AND
+					session_id 				= ?
 			";
 
 			try {

@@ -1,5 +1,11 @@
 <?php
 
+    // Lets redirect the user if it is already logged in.
+    if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']) {
+        header('Location: ' . RequestHelper::$url_root . '/user_profile/view');
+        exit();
+    }
+
     $do = new (RequestHelper::$actor_class_name . 'Do');
 
     if (isset($_POST['login']) && $_POST['login'] === 'Login') {

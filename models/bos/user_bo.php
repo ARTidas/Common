@@ -69,6 +69,37 @@
                     )
                 ) {
                     LogHelper::addConfirmation('Login successfull!');
+                    
+                    LogHelper::addConfirmation('Generating session...');
+                    //session_regenerate_id(true);
+                    $_SESSION['user_id']        = $do->id;
+                    $_SESSION['is_logged_in']   = true;
+
+                    LogHelper::addConfirmation('Generating cookie...');
+                    setcookie(
+                        'user_id', 
+                        $do->id, 
+                        time() + (86400 * 30), // 30 days expiration time
+                        "/", 
+                        "", 
+                        true, // Secure flag: only send over HTTPS
+                        true // HttpOnly flag: JavaScript cannot access the cookie
+                    );
+                    
+                    $login_dao_last_insert_id = $this->dao->createLogin([
+                        $do->id,
+                        $_COOKIE['PHPSESSID'],
+                        SecurityBo::getRequestDetailsInJSON()
+                    ]);
+                    if ($login_dao_last_insert_id) {
+                        LogHelper::addConfirmation('Created login record with id: #' . $login_dao_last_insert_id);
+                        // Lets redirect the user after a successfull login attempt...
+                        header('Location: ' . RequestHelper::$url_root . '/user_profile/view');
+                        exit();
+                    }
+                    else {
+                        LogHelper::addWarning('Failed to create login record!');
+                    }
                 }
                 else {
                     LogHelper::addWarning('Incorrect password!');
@@ -79,6 +110,13 @@
             }
             
 		}
+
+        /* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function logout($user_id, $session_id) {
+            return $this->dao->deleteLogin([$user_id, $session_id]);
+        }
 
     }
 

@@ -34,7 +34,10 @@
                         </div>
 
                         <div>
-                            
+                            <button>Knowledge center</button>
+                            <div>
+                            <a href="<?php print(RequestHelper::$url_root); ?>/knowledge_center_useful_link/view">Useful links</a>
+                            </div>
                         </div>
 
                     </nav>

@@ -54,5 +54,6 @@
     require(RequestHelper::$common_file_root . '/views/user_login_view.php');
     require(RequestHelper::$common_file_root . '/views/user_profile_view_view.php');
     require(RequestHelper::$common_file_root . '/views/user_birthday_calendar_view_view.php');
+    require(RequestHelper::$common_file_root . '/views/knlowledge_center_useful_links_view_view.php');
 
 ?>

@@ -21,11 +21,6 @@
                     <li>Implement a password mask for increased security</li>
                     <li>Send email verification upon registration</li>
                     <li>Create a forgotten password process</li>
-                    <li>Create a knowledge center
-                        <ol>
-                            <li>Useful links</li>
-                        </ol>
-                    </li>
                 </ol>
 
                 <h2>Q&A</h2>

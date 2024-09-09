@@ -12,6 +12,7 @@
         require(RequestHelper::$common_file_root . '/models/bos/user_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/password_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/security_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/user_profile_image_file_bo.php');
 
         /* ********************************************************
          * *** Data Access Objects ********************************

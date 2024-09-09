@@ -15,7 +15,7 @@
                     <?php print(RequestHelper::$actor_action); ?>
                 </h1>
 
-                <form method="post" action="">
+                <form method="post" action="" enctype="multipart/form-data">
                     
                     <div class="log_warnings">
                         <?php
@@ -62,6 +62,14 @@
                             }
                         }
                     ?>
+                    <div>
+                        <label for="image_file">Profile picture:</label>
+                        <input
+                            type="file"
+                            id="image_file"
+                            name="image_file"
+                            value="" />
+                    </div>
 
                     <input type="submit" name="modify" value="Update" />
                 </form>

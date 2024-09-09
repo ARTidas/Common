@@ -15,6 +15,17 @@
         else {
             LogHelper::addWarning('Modification failed!');
         }
+
+        if (isset($_FILES['image_file'])) {
+            if (true) { //TODO: implement checks for the image upload.
+                $image_file_bo = new ImageFileBo($_FILES['image_file'], $do);
+                
+                LogHelper::addMessage('File uploaded successfully!');
+            }
+            else {
+                LogHelper::addMessage('Error occured while uploading file!');
+            }
+        }
     }
 
     $view = new (RequestHelper::$actor_class_name . ucfirst(RequestHelper::$actor_action) . 'View')(

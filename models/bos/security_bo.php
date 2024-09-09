@@ -35,9 +35,9 @@
                     true // HttpOnly flag: JavaScript cannot access the cookie
                 );
 
-                $user_do = ((new BoFactory)->get(ActorHelper::USER))->get($_SESSION['user_id']);
+                $user_do = ((new BoFactory)->get(ActorHelper::USER))->get($_COOKIE['user_id']);
     
-                $_SESSION['user_id']      = $_COOKIE['user_id'];
+                $_SESSION['user_id']      = $user_do->id;
                 $_SESSION['user_name']    = $user_do->name;
                 $_SESSION['is_logged_in'] = true;
 

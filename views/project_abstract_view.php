@@ -41,6 +41,22 @@
                             </div>
                         </div>
 
+                        <!-- <div>
+                            <a href="<?php print(RequestHelper::$url_root); ?>/bulletin_board/view">Bulletin board</a>
+                        </div> -->
+
+                        <!-- <div>
+                            <button>Resources</button>
+                            <div>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/resource/list">List</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/resource/request">Request</a>
+                            </div>
+                        </div> -->
+
+                        <div>
+                            <a href="<?php print(RequestHelper::$url_root); ?>/map/view">Map</a>
+                        </div>
+
                     </nav>
                 </section>
 

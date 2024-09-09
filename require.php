@@ -13,12 +13,14 @@
         require(RequestHelper::$common_file_root . '/models/bos/password_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/security_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/user_profile_image_file_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/map_bo.php');
 
         /* ********************************************************
          * *** Data Access Objects ********************************
          * ********************************************************/
         require(RequestHelper::$common_file_root . '/models/daos/abstract_dao.php');
         require(RequestHelper::$common_file_root . '/models/daos/user_dao.php');
+        require(RequestHelper::$common_file_root . '/models/daos/map_dao.php');
 
         /* ********************************************************
          * *** Data Objects ***************************************
@@ -56,5 +58,6 @@
     require(RequestHelper::$common_file_root . '/views/user_birthday_calendar_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_useful_links_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_pti_lectures_view_view.php');
+    require(RequestHelper::$common_file_root . '/views/map_view_view.php');
 
 ?>

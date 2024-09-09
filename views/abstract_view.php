@@ -37,10 +37,16 @@
                     <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/form.css" type="text/css" />
                     <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/footer.css" type="text/css" />
                     <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/calendar.css" type="text/css" />
+                    <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/map.css" type="text/css" />
                     <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/index.css" type="text/css" />
 
                     <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/jquery/jquery.js"></script>
                     <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/nav_menu_dropdown.js"></script>
+
+                    <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/leaflet.css" type="text/css" />
+                    <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/leaflet/leaflet.js"></script>
+
+                    <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/map.js"></script>
                 </head>
 			<?php
 		}

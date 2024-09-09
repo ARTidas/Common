@@ -26,6 +26,7 @@
                 <h2>Q&A</h2>
                 <ol>
                     <li>Should emails be restricted to the unithe.hu emails only?</li>
+                    <li>Can we authenticate Neptun codes?</li>
                 </ol>
 			<?php
 		}

@@ -43,10 +43,8 @@
                                         }
                                     }
 
-                                    $user_profile_file_path = RequestHelper::$common_url_root . '/cdn/user_profile_pictures/' . 'user_' . $do->id . '_icon.png';
-                                    $user_profile_url       = RequestHelper::$common_file_root . '/cdn/user_profile_pictures/' . 'user_' . $do->id . '_icon.png';
-                                    if (file_exists($user_profile_url)) {
-                                        print('<td><img src="' . $user_profile_file_path . '"></td>');
+                                    if (file_exists($do->profile_icon_file_path)) {
+                                        print('<td><img src="' . $do->profile_icon_url . '"></td>');
                                     }
                                     else {
                                         print('<td>&nbsp;</td>');

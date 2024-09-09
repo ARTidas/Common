@@ -38,7 +38,9 @@
 				$input === 'password_hash' ||
 				$input === 'is_active' ||
 				$input === 'created_at' ||
-				$input === 'updated_at'
+				$input === 'updated_at' ||
+				$input === 'profile_icon_file_path' ||
+				$input === 'profile_icon_url'
 			) {
 				return false;
 			}

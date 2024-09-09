@@ -69,6 +69,11 @@
                             id="image_file"
                             name="image_file"
                             value="" />
+                        <?php
+                            if (file_exists($this->do->do->profile_icon_file_path)) {
+                                print('<td><img src="' . $this->do->do->profile_icon_url . '"></td>');
+                            }
+                        ?>
                     </div>
 
                     <input type="submit" name="modify" value="Update" />

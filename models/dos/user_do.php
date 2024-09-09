@@ -16,6 +16,25 @@
         public $phone;
         public $birthday_at;
 
+        public $profile_icon_file_path;
+        public $profile_icon_url;
+
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        function __construct($attributes = null, $class_actor = null) {
+            $this->class_actor = $class_actor;
+            
+            if ($attributes != null) {
+                foreach ($attributes as $key => $value) {
+                    $this->$key = $value;
+                }
+            }
+
+            $this->profile_icon_file_path    = RequestHelper::$common_file_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_icon.png';
+            $this->profile_icon_url          = RequestHelper::$common_url_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_icon.png';
+        }
+
     }
 
 ?>

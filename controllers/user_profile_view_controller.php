@@ -5,6 +5,7 @@
         $do->name               = $_POST['name'];
         $do->neptun_code        = $_POST['neptun_code'];
         $do->phone              = $_POST['phone'];
+        $do->birthday_at        = $_POST['birthday_at'];
         
         LogHelper::addMessage('Modifying record with id: #' . $do->id);
 

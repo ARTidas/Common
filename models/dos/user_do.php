@@ -14,6 +14,7 @@
         public $name;
         public $neptun_code;
         public $phone;
+        public $birthday_at;
 
     }
 

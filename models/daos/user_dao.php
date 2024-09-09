@@ -191,7 +191,8 @@
 					USERS.updated_at 			AS updated_at,
 					USER_PROFILES.name 			AS name,
 					USER_PROFILES.neptun_code   AS neptun_code,
-					USER_PROFILES.phone 		AS phone
+					USER_PROFILES.phone 		AS phone,
+					LEFT(USER_PROFILES.birthday_at, 10)	AS birthday_at
 				FROM
 					common.users USERS
 					LEFT JOIN common.user_profiles USER_PROFILES
@@ -229,7 +230,8 @@
 					USERS.updated_at 			AS updated_at,
 					USER_PROFILES.name 			AS name,
 					USER_PROFILES.neptun_code 	AS neptun_code,
-					USER_PROFILES.phone 		AS phone
+					USER_PROFILES.phone 		AS phone,
+					USER_PROFILES.birthday_at 	AS birthday_at
 				FROM
 					common.users USERS
 					LEFT JOIN common.user_profiles USER_PROFILES
@@ -352,6 +354,7 @@
                     name            = :name,
 					neptun_code 	= :neptun_code,
 					phone			= :phone,
+					birthday_at		= :birthday_at,
 					is_active		= 1,
 					created_at 		= NOW(),
 					updated_at 		= NOW()
@@ -364,6 +367,7 @@
 				$statement->bindValue(':name', $do->name, PDO::PARAM_STR);
 				$statement->bindValue(':neptun_code', $do->neptun_code, PDO::PARAM_STR);
 				$statement->bindValue(':phone', $do->phone, PDO::PARAM_STR);
+				$statement->bindValue(':birthday_at', $do->birthday_at, PDO::PARAM_STR);
                 $statement->execute();
         
                 return $handler->lastInsertId();

@@ -1,5 +1,6 @@
 <?php
 
+	// Redirect user if no sesion exists.
     if (!isset($_SESSION['user_id'])) {
         header('Location: ' . RequestHelper::$url_root . '/user/login');
         exit();

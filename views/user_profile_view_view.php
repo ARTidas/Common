@@ -35,16 +35,30 @@
                     <?php
                         foreach ($this->do->do->getAttributes() as $key => $value) {
                             if (ActorHelper::isAttributeRequiredForView($key)) {
+                                if ($key === 'birthday_at') {
                     ?>
-                                <div>
-                                    <label for="<?php print($key); ?>"><?php print(ucfirst($key)); ?>:</label>
-                                    <input 
-                                        type="text" 
-                                        id="<?php print($key); ?>" 
-                                        name="<?php print($key); ?>" 
-                                        value="<?php print($value); ?>" />
-                                </div>
+                                    <div>
+                                        <label for="<?php print($key); ?>"><?php print(ucfirst($key)); ?>:</label>
+                                        <input 
+                                            type="date" 
+                                            id="<?php print($key); ?>" 
+                                            name="<?php print($key); ?>" 
+                                            value="<?php print(substr($value, 0, 10)); ?>" />
+                                    </div>
                     <?php
+                                }
+                                else {
+                    ?>
+                                    <div>
+                                        <label for="<?php print($key); ?>"><?php print(ucfirst($key)); ?>:</label>
+                                        <input 
+                                            type="text" 
+                                            id="<?php print($key); ?>" 
+                                            name="<?php print($key); ?>" 
+                                            value="<?php print($value); ?>" />
+                                    </div>
+                    <?php
+                                }
                             }
                         }
                     ?>

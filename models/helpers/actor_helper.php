@@ -53,7 +53,8 @@
             if (
 				$input === 'name' ||
 				$input === 'neptun_code' ||
-				$input === 'phone'
+				$input === 'phone' ||
+				$input === 'birthday_at'
 			) {
 				return true;
 			}

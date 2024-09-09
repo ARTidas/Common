@@ -24,15 +24,21 @@
             //      refresh the session
             //      restart the 30 day on cookie validity
 
-            setcookie(
-                'user_id', 
-                $_COOKIE['user_id'], 
-                time() + (86400 * 30), // 30 days expiration time
-                "/", 
-                "", 
-                true, // Secure flag: only send over HTTPS
-                true // HttpOnly flag: JavaScript cannot access the cookie
-            );
+            if (isset($_COOKIE['user_id'])) {
+                setcookie(
+                    'user_id', 
+                    $_COOKIE['user_id'], 
+                    time() + (86400 * 30), // 30 days expiration time
+                    "/", 
+                    "", 
+                    true, // Secure flag: only send over HTTPS
+                    true // HttpOnly flag: JavaScript cannot access the cookie
+                );
+    
+                $_SESSION['user_id']      = $_COOKIE['user_id'];
+                $_SESSION['is_logged_in'] = true;
+            }
+            
         }
 
         /* ********************************************************

@@ -15,7 +15,6 @@
 
 				<h2>TODO</h2>
                 <ol>
-                    <li>Create a birthday calendar</li>
                     <li>Profile picture</li>
                     <li>I18N...</li>
                     <li>Make PHP mail function work</li>

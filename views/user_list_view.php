@@ -33,7 +33,12 @@
                                 print('<tr>');
                                     foreach ($do->getAttributes() as $key => $value) {
                                         if (ActorHelper::isAttributeRequiredForUserList($key)) {
-                                            print('<td>' . $value . '</td>');
+                                            if ($key === 'birthday_at' && !empty($value)) {
+                                                print('<td>' . DatetimeHelper::formatToBirthday($value) . '</td>');
+                                            }
+                                            else {
+                                                print('<td>' . $value . '</td>');
+                                            }
                                         }
                                     }
                                 print('</tr>');

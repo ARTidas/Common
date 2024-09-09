@@ -20,4 +20,18 @@
             return $birthdays_by_month;
         }
 
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function formatToBirthday($input_string) {
+            // Convert input string into a DateTime object
+            $date = new DateTime($input_string);
+            
+            // Subtract one day
+            $date->modify('-1 day');
+
+            // Format the new date to "F j" (e.g., "July 17")
+            return $date->format('F j');
+        }
+
     }

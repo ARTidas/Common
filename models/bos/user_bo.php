@@ -113,6 +113,7 @@
                     LogHelper::addConfirmation('Generating session...');
                     //session_regenerate_id(true);
                     $_SESSION['user_id']        = $do->id;
+                    $_SESSION['user_name']      = $do->name;
                     $_SESSION['is_logged_in']   = true;
 
                     LogHelper::addConfirmation('Generating cookie...');

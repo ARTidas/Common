@@ -274,11 +274,15 @@
 					USER_PASSWORDS.hash		AS password_hash,
                     USERS.is_active 	    AS is_active,
                     USERS.created_at        AS created_at,
-                    USERS.updated_at        AS updated_at
+                    USERS.updated_at        AS updated_at,
+					USER_PROFILES.name		AS name
 				FROM
 					common.users USERS
 					INNER JOIN common.user_passwords USER_PASSWORDS
 						ON USERS.id = USER_PASSWORDS.user_id
+					LEFT JOIN common.user_profiles USER_PROFILES
+						ON USERS.id = USER_PROFILES.user_id  AND
+		   				   USER_PROFILES.is_active = 1
 				WHERE
 					USERS.email = ?
 				LIMIT 1

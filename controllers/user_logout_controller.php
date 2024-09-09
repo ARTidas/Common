@@ -30,9 +30,9 @@
     session_destroy(); // Destroy the session
 
     // Optionally remove any user-specific cookies
-    if (isset($_COOKIE['user'])) {
+    if (isset($_COOKIE['user_id'])) {
         setcookie(
-            'user',
+            'user_id',
             '',
             time() - 3600,
             "/"

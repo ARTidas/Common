@@ -200,8 +200,10 @@
 						USER_PROFILES.is_active = 1
 				WHERE
 					USERS.is_active = 1
-				;
-			";
+				ORDER BY
+					USER_PROFILES.name ASC,
+					USERS.email ASC
+			;";
 
 			try {
 				$handler = ($this->database_connection_bo)->getConnection();

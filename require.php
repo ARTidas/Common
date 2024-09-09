@@ -32,6 +32,7 @@
         require(RequestHelper::$common_file_root . '/models/helpers/log_helper.php');
         require(RequestHelper::$common_file_root . '/models/helpers/actor_helper.php'); //TODO: Do we need this?
         require(RequestHelper::$common_file_root . '/models/helpers/string_helper.php');
+        require(RequestHelper::$common_file_root . '/models/helpers/datetime_helper.php');
 
         /* ********************************************************
          * *** Factories ******************************************
@@ -51,5 +52,6 @@
     require(RequestHelper::$common_file_root . '/views/user_create_view.php');
     require(RequestHelper::$common_file_root . '/views/user_login_view.php');
     require(RequestHelper::$common_file_root . '/views/user_profile_view_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_birthday_calendar_view_view.php');
 
 ?>

@@ -27,13 +27,14 @@
                                 <a href="<?php print(RequestHelper::$url_root); ?>/user/list">List</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/user/create">Register</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/user/login">Login</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/user_profile/view">Profile</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/user_birthday_calendar/view">Birthday calendar</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/user/logout">Logout</a>
-                                <!-- <a href="<?php print(RequestHelper::$url_root); ?>/task_type/modify">Modify</a> -->
                             </div>
                         </div>
 
                         <div>
-                            <a href="<?php print(RequestHelper::$url_root); ?>/user_profile/view">Profile</a>
+                            
                         </div>
 
                     </nav>

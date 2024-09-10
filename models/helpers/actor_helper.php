@@ -159,4 +159,17 @@
 			return false;
         }
 
+		public static function isAttributeRequiredForMapPinCreate($input) {
+			if (
+				$input === 'title' ||
+				$input === 'latitude' ||
+				$input === 'longitude' ||
+				$input === 'popup_html'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
     }

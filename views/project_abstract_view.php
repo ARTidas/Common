@@ -54,7 +54,11 @@
                         </div> -->
 
                         <div>
-                            <a href="<?php print(RequestHelper::$url_root); ?>/map/view">Map</a>
+                            <button>Map</button>
+                            <div>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/map/view">View</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/map_pin/create">Create pin</a>
+                            </div>
                         </div>
 
                     </nav>

@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     ).addTo(map);
 
 
-    L.marker([48.321281, 21.565936], {icon: greenIcon}).addTo(map)
+    /*L.marker([48.321281, 21.565936], {icon: greenIcon}).addTo(map)
         .bindPopup(`
             <strong>University of Tokaj</strong><br/>
             Main entrance
@@ -77,6 +77,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         Main entrance
     `).openPopup();
     universityOfTokajGroup.addLayer(marker);
+
+    marker = L.marker(
+        [
+            parseFloat(48.321392),
+            parseFloat(21.56503)
+        ],
+        {icon: greenIcon}
+    );
+    marker.bindPopup(`
+        <strong>Hotel Furmint ***</strong><br/>
+        Main entrance
+    `).openPopup();
+    universityOfTokajGroup.addLayer(marker);*/
 
 
 

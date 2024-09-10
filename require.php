@@ -14,6 +14,7 @@
         require(RequestHelper::$common_file_root . '/models/bos/security_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/user_profile_image_file_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/map_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/map_pin_bo.php');
 
         /* ********************************************************
          * *** Data Access Objects ********************************
@@ -21,6 +22,7 @@
         require(RequestHelper::$common_file_root . '/models/daos/abstract_dao.php');
         require(RequestHelper::$common_file_root . '/models/daos/user_dao.php');
         require(RequestHelper::$common_file_root . '/models/daos/map_dao.php');
+        require(RequestHelper::$common_file_root . '/models/daos/map_pin_dao.php');
 
         /* ********************************************************
          * *** Data Objects ***************************************
@@ -28,6 +30,7 @@
         require(RequestHelper::$common_file_root . '/models/dos/view_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/abstract_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/user_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/map_pin_do.php');
 
         /* ********************************************************
          * *** Helpers ********************************************
@@ -59,5 +62,6 @@
     require(RequestHelper::$common_file_root . '/views/knowledge_center_useful_links_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_pti_lectures_view_view.php');
     require(RequestHelper::$common_file_root . '/views/map_view_view.php');
+    require(RequestHelper::$common_file_root . '/views/map_pin_create_view.php');
 
 ?>

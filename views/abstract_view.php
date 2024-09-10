@@ -44,9 +44,7 @@
                     <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/nav_menu_dropdown.js"></script>
 
                     <link rel="stylesheet" href="<?php print(RequestHelper::$common_url_root); ?>/css/leaflet.css" type="text/css" />
-                    <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/leaflet/leaflet.js"></script>
-
-                    <script type="text/javascript" src="<?php print(RequestHelper::$common_url_root); ?>/js/map.js"></script>
+                    
                 </head>
 			<?php
 		}
@@ -145,7 +143,7 @@
         public function displayLogs() {
 			?>
 				<div class="log_container">
-                    <h2>Logs</h2>
+                    <!-- <h2>Logs</h2> -->
                     <div class="logs">
                         <h3>Errors</h3>
                         <div class="log_errors">

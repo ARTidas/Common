@@ -1,6 +1,7 @@
 <?php
 
-	$bo = $bo_factory->get(StringHelper::toPascalCase(RequestHelper::$actor_name));
+	//$bo = $bo_factory->get(StringHelper::toPascalCase(RequestHelper::$actor_name));
+	$bo = $bo_factory->get(ActorHelper::MAP_PINS);
 
 	/* ********************************************************
 	 * *** Lets control exectution by actor action... *********

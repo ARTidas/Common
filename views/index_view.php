@@ -27,6 +27,7 @@
                 <ol>
                     <li>Should emails be restricted to the unithe.hu emails only?</li>
                     <li>Can we authenticate Neptun codes?</li>
+                    <li>What should we list on our map?</li>
                 </ol>
 			<?php
 		}

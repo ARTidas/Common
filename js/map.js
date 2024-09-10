@@ -12,10 +12,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let center = [48.32136917139583, 21.56666973293446];
     const map = L.map("map").setView(center, 17);
 
-
-
     const layersControl = L.control.layers().addTo(map);
     const universityOfTokajGroup = new L.FeatureGroup().addTo(map);
+
 
     let OpenStreetMap = L.tileLayer(
         'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -44,69 +43,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
     ).addTo(map);
 
 
-    /*L.marker([48.321281, 21.565936], {icon: greenIcon}).addTo(map)
-        .bindPopup(`
-            <strong>University of Tokaj</strong><br/>
-            Main entrance
-        `)
-        .openPopup();
+    // Loop through each object in the data array
+    mapData.forEach(function(pin) {
+        if (pin.title === 'University of Tokaj') {
+            L.marker([pin.latitude, pin.longitude], {icon: greenIcon}).addTo(map)
+                .bindPopup(`
+                    <strong>${pin.title}</strong><br>
+                    ${pin.popup_html}
+                `)
+                .openPopup();
+        }
+        else {
+            var marker = L.marker(
+                [
+                    pin.latitude,
+                    pin.longitude
+                ],
+                {icon: greenIcon}
+            );
+            marker.bindPopup(`
+                <strong>${pin.title}</strong><br>
+                ${pin.popup_html}
+            `)
+            universityOfTokajGroup.addLayer(marker);
+        }
+        
+    });
 
-
-    let marker = L.marker(
-        [
-            parseFloat(48.321698),
-            parseFloat(21.566739)
-        ],
-        {icon: greenIcon}
-    );
-    marker.bindPopup(`
-        <strong>CoffeHouse</strong><br/>
-        Main entrance
-    `).openPopup();
-    universityOfTokajGroup.addLayer(marker);
-
-    marker = L.marker(
-        [
-            parseFloat(48.32192),
-            parseFloat(21.566779)
-        ],
-        {icon: greenIcon}
-    );
-    marker.bindPopup(`
-        <strong>Cultural center</strong><br/>
-        Main entrance
-    `).openPopup();
-    universityOfTokajGroup.addLayer(marker);
-
-    marker = L.marker(
-        [
-            parseFloat(48.321392),
-            parseFloat(21.56503)
-        ],
-        {icon: greenIcon}
-    );
-    marker.bindPopup(`
-        <strong>Hotel Furmint ***</strong><br/>
-        Main entrance
-    `).openPopup();
-    universityOfTokajGroup.addLayer(marker);*/
 
 
 
 
     map.on('click', onMapClick);
-    /*handleGeoJSON(geojson_data_hungary_boundary, 'Hungary border');
-    handleGeoJSON(geojson_data_hungary_states, 'Hungary states');*/
 
-    /*var imageUrl = 'https://mlthesis.artidas.hu/Map_BASE_V1/javascript/magyarorszag_borvidekei_2010.jpg',
-    imageBounds = [
-        [48.74048, 15.944797],
-        [45.446738, 23.059333]
-    ];
-    const image_layer = L.imageOverlay(imageUrl, imageBounds).addTo(map);
-    image_layer.setOpacity(0.5);
-    image_layer.addTo(map);
-    layersControl.addOverlay(image_layer, 'Hungarian wine regions');*/
 
     function onMapClick(e) {
         document.getElementById('map_log').innerHTML += 'Click at: ' + e.latlng + '<br/>';
@@ -139,4 +108,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
         return null;
     }
+
 });

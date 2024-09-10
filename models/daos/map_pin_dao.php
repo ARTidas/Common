@@ -49,6 +49,40 @@
 				return false;
 			}
 		}
+
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function getList() {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				SELECT
+					MAP_PINS.id 					AS id,
+					MAP_PINS.title 					AS title,
+					MAP_PINS.latitude 				AS latitude,
+					MAP_PINS.longitude 				AS longitude,
+					MAP_PINS.popup_html 			AS popup_html,
+					MAP_PINS.is_active 				AS is_active,
+					MAP_PINS.created_at 			AS created_at,
+					MAP_PINS.updated_at 			AS updated_at
+				FROM
+					common.map_pins MAP_PINS
+				WHERE
+					MAP_PINS.is_active = 1
+			;";
+
+			try {
+				$handler = ($this->database_connection_bo)->getConnection();
+				$statement = $handler->prepare($query_string);
+				$statement->execute();
+				
+				return $statement->fetchAll(PDO::FETCH_ASSOC);
+			}
+			catch(Exception $exception) {
+				LogHelper::addError('Error: ' . $exception->getMessage());
+
+				return false;
+			}
+		}
 		
 	}
     

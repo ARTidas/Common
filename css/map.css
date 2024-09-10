@@ -1,14 +1,12 @@
 #map {
     height: 85vh;
-    width: 78vw;
+    /*width: 95vw;*/
     border: 1px solid #000;
     margin: auto;
-    margin: 10px;
-    float: left;
+    margin: 0px;
+    z-index: 0;
 }
 #map_log {
-    width: 10vw;
-    float: right;
     font-size: 10px;
     margin-left: 0px;
 }

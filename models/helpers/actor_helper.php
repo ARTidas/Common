@@ -6,6 +6,7 @@
 	class ActorHelper {
 
 		const USER 		= 'User';
+		const MAP_PINS  = 'MapPin';
         const TASK 		= 'Task';
         const TASK_TYPE = 'TaskType';
 

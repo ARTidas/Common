@@ -173,4 +173,20 @@
 			return false;
 		}
 
+
+		public static function isAttributeRequiredForMapPinUpdate($input) {
+			if (
+				$input === 'id' ||
+				$input === 'title' ||
+				$input === 'latitude' ||
+				$input === 'longitude' ||
+				$input === 'popup_html' ||
+				$input === 'is_active'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
     }

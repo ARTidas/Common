@@ -59,6 +59,7 @@
                                 <a href="<?php print(RequestHelper::$url_root); ?>/map/view">View</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/map_pin/create">Create pin</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/map_pin/list">List pins</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/map_pin/modify">Modify pin</a>
                             </div>
                         </div>
 

@@ -61,6 +61,30 @@
             return true;
 		}
 
+
+        /* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function update(AbstractDo $do) {
+            $this->validateDoForCreate($do);
+
+            if (!$this->isDoValidForCreate($do)) {
+                return false;
+            }
+
+			return ($this->dao)->update(
+				[
+					$do->title,
+					$do->latitude,
+					$do->longitude,
+                    $do->popup_html,
+                    $do->is_active,
+                    $do->id
+				]
+			);
+		}
+
+
     }
 
 ?>

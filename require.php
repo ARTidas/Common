@@ -64,5 +64,6 @@
     require(RequestHelper::$common_file_root . '/views/map_view_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_create_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_list_view.php');
+    require(RequestHelper::$common_file_root . '/views/map_pin_modify_view.php');
 
 ?>

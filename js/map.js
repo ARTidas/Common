@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     let center = [48.32136917139583, 21.56666973293446];
     const map = L.map("map").setView(center, 17);
-
-    const layersControl = L.control.layers().addTo(map);
     const universityOfTokajGroup = new L.FeatureGroup().addTo(map);
 
 
@@ -79,34 +77,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     function onMapClick(e) {
         document.getElementById('map_log').innerHTML += 'Click at: ' + e.latlng + '<br/>';
-    }
-    
-    function handleGeoJSON(data_variable, data_name) {
-        const existing_Layer = findLayerByName(data_name);
-
-        if (existing_Layer) {
-            map.removeLayer(existing_Layer);
-        }
-
-        const geoJsonLayer = L.geoJSON(data_variable, {
-            onEachFeature: function (feature, layer) {
-                // You can customize the interaction with each feature if needed
-            }
-        });
-
-        geoJsonLayer.addTo(map);
-
-        layersControl.addOverlay(geoJsonLayer, data_name);
-    }
-
-    function findLayerByName(name) {    
-        map.eachLayer(function (layer) {
-            if (layer instanceof L.GeoJSON && layer.options.name === name) {
-                return layer;
-            }
-        });
-    
-        return null;
     }
 
 });

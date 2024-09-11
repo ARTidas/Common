@@ -5,10 +5,11 @@
 	 * ********************************************************/
 	class ActorHelper {
 
-		const USER 		= 'User';
-		const MAP_PINS  = 'MapPin';
-        const TASK 		= 'Task';
-        const TASK_TYPE = 'TaskType';
+		const USER 			= 'User';
+		const MAP_PINS  	= 'MapPin';
+		const PERMISSION 	= 'Permission';
+        const TASK 			= 'Task';
+        const TASK_TYPE 	= 'TaskType';
 
 		/* ********************************************************
          * ********************************************************
@@ -160,6 +161,9 @@
 			return false;
         }
 
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
 		public static function isAttributeRequiredForMapPinCreate($input) {
 			if (
 				$input === 'title' ||
@@ -174,6 +178,9 @@
 		}
 
 
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
 		public static function isAttributeRequiredForMapPinUpdate($input) {
 			if (
 				$input === 'id' ||
@@ -182,6 +189,86 @@
 				$input === 'longitude' ||
 				$input === 'popup_html' ||
 				$input === 'is_active'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForPermissionCreate($input) {
+			if (
+				$input === 'name'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForPermissionUpdate($input) {
+			if (
+				$input === 'is_active' ||
+				$input === 'name'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForUserPermissionCreate($input) {
+			if (
+				$input === 'user_id' ||
+				$input === 'permission_id'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForUserPermissionReview($input) {
+			if (
+				$input === 'id' ||
+				//$input === 'user_id' ||
+				$input === 'user_name' ||
+				//$input === 'permission_id' ||
+				$input === 'permission_name' ||
+				$input === 'status'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForUserPermissionUpdate($input) {
+			if (
+				$input === 'id' ||
+				//$input === 'user_id' ||
+				//$input === 'user_name' ||
+				//$input === 'permission_id' ||
+				//$input === 'permission_name' ||
+				$input === 'status'
 			) {
 				return true;
 			}

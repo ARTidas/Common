@@ -15,6 +15,8 @@
         require(RequestHelper::$common_file_root . '/models/bos/user_profile_image_file_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/map_bo.php');
         require(RequestHelper::$common_file_root . '/models/bos/map_pin_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/permission_bo.php');
+        require(RequestHelper::$common_file_root . '/models/bos/user_permission_bo.php');
 
         /* ********************************************************
          * *** Data Access Objects ********************************
@@ -23,14 +25,19 @@
         require(RequestHelper::$common_file_root . '/models/daos/user_dao.php');
         require(RequestHelper::$common_file_root . '/models/daos/map_dao.php');
         require(RequestHelper::$common_file_root . '/models/daos/map_pin_dao.php');
+        require(RequestHelper::$common_file_root . '/models/daos/permission_dao.php');
+        require(RequestHelper::$common_file_root . '/models/daos/user_permission_dao.php');
 
         /* ********************************************************
          * *** Data Objects ***************************************
          * ********************************************************/
         require(RequestHelper::$common_file_root . '/models/dos/view_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/user_permission_view_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/abstract_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/user_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/map_pin_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/permission_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/user_permission_do.php');
 
         /* ********************************************************
          * *** Helpers ********************************************
@@ -66,5 +73,10 @@
     require(RequestHelper::$common_file_root . '/views/map_pin_create_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_list_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_modify_view.php');
+    require(RequestHelper::$common_file_root . '/views/permission_create_view.php');
+    require(RequestHelper::$common_file_root . '/views/permission_list_view.php');
+    require(RequestHelper::$common_file_root . '/views/permission_modify_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_permission_request_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_permission_review_view.php');
 
 ?>

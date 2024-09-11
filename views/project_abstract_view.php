@@ -64,6 +64,17 @@
                             </div>
                         </div>
 
+                        <div>
+                            <button>Admin</button>
+                            <div>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/permission/list">List permissions</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/user_permission/request">Request permission</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/permission/create">Create permission</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/permission/modify">Modify permission</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/user_permission/review">Review permissions</a>
+                            </div>
+                        </div>
+
                     </nav>
                 </section>
 

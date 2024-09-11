@@ -3,12 +3,14 @@
 	/* ********************************************************
 	 * ********************************************************
 	 * ********************************************************/
-	class MapPinDo extends AbstractDo {
+	class UserPermissionDo extends AbstractDo {
 
-        public $title;
-        public $latitude;
-        public $longitude;
-        public $popup_html;
+        public $user_id;
+        public $permission_id;
+        public $status;
+
+        public $user_name;
+        public $permission_name;
 
     }
 ?>

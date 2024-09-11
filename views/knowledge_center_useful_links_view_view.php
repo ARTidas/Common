@@ -11,7 +11,8 @@
             'Neptun' => 'https://neptun.unithe.hu/hallgato/Login.aspx'
         ];
         public $fun_links = [
-            'Make it Mame' => 'https://makeitmeme.com/en/'
+            'Make it Mame' => 'https://makeitmeme.com/en/',
+            'TeleHack' => 'https://telehack.com/'
         ];
 
         /* ********************************************************

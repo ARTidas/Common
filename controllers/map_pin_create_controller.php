@@ -1,5 +1,13 @@
 <?php
 
+    if (
+        //!PermissionHelper::isUserAuthorized('Demonstrator') &&
+        !PermissionHelper::isUserAuthorized('Map administrator')
+    ) {
+        header('Location: ' . RequestHelper::$url_root . '/user_permission/request');
+        exit();
+    }
+
     $do = new (RequestHelper::$actor_class_name . 'Do');
 
     if (isset($_POST['create']) && $_POST['create'] === 'Create') {

@@ -1,5 +1,13 @@
 <?php
 
+    if (
+        //!PermissionHelper::isUserAuthorized('Demonstrator') &&
+        !PermissionHelper::isUserAuthorized('Common administrator')
+    ) {
+        header('Location: ' . RequestHelper::$url_root . '/user_permission/request');
+        exit();
+    }
+
     $user_permission_do = new (RequestHelper::$actor_class_name . 'Do');
 
     if (isset($_POST['review'])) {

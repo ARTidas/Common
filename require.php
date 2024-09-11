@@ -46,6 +46,7 @@
         require(RequestHelper::$common_file_root . '/models/helpers/actor_helper.php'); //TODO: Do we need this?
         require(RequestHelper::$common_file_root . '/models/helpers/string_helper.php');
         require(RequestHelper::$common_file_root . '/models/helpers/datetime_helper.php');
+        require(RequestHelper::$common_file_root . '/models/helpers/permission_helper.php');
 
         /* ********************************************************
          * *** Factories ******************************************

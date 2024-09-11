@@ -41,6 +41,10 @@
                 $_SESSION['user_name']    = $user_do->name;
                 $_SESSION['is_logged_in'] = true;
 
+                PermissionHelper::$user_permission_do_list = 
+                    (new BoFactory)->get(ActorHelper::PERMISSION)->getPermissionListByUserID(
+                        $user_do->id
+                    );
             }
             
         }
@@ -67,6 +71,29 @@
 		public static function getRequestDetailsInJSON() {
             return json_encode(Self::getRequestDetails());
         }
+
+
+        /* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+        public static function getUserPermissionList() {
+			$do_list = [];
+			
+			$records = (new BoFactory)->get(ActorHelper::PERMISSION)->getPermissionListByUserID($user_do->id);
+			
+			if (empty($records)) {
+				LogHelper::addWarning('There are no records of: ' . $this->actor_name);
+			}
+			else {
+				foreach ($records as $record) {
+					$do_list[] = $this->do_factory->get($this->actor_name, $record);
+				}
+			}
+			
+			return $do_list;
+        }
+
+
 
     }
 

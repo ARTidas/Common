@@ -101,6 +101,41 @@
 			}
 		}
 
+
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function getByUserId($user_id) {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				SELECT
+					USERS_PERMISSIONS.permission_id AS id,
+					PERMISSIONS.name AS name
+				FROM
+					common.users_permissions USERS_PERMISSIONS
+					INNER JOIN common.permissions PERMISSIONS
+						ON USERS_PERMISSIONS.permission_id = PERMISSIONS.id
+				WHERE
+					USERS_PERMISSIONS.is_active = 1 AND
+					USERS_PERMISSIONS.status = 'APPROVED' AND
+					USERS_PERMISSIONS.user_id = :user_id
+				;
+			";
+
+			try {
+                $handler = $this->database_connection_bo->getConnection();
+                $statement = $handler->prepare($query_string);
+                $statement->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+                $statement->execute();
+        
+                return $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (Exception $exception) {
+                LogHelper::addError('Error: ' . $exception->getMessage());
+        
+                return false;
+            }
+		}
+
+
 		/* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/

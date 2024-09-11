@@ -42,7 +42,13 @@
 				$input === 'created_at' ||
 				$input === 'updated_at' ||
 				$input === 'profile_icon_file_path' ||
-				$input === 'profile_icon_url'
+				$input === 'profile_icon_url' ||
+				$input === 'profile_small_file_path' ||
+				$input === 'profile_small_url' ||
+				$input === 'profile_medium_file_path' ||
+				$input === 'profile_medium_url' ||
+				$input === 'profile_large_file_path' ||
+				$input === 'profile_large_url'
 			) {
 				return false;
 			}

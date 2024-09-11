@@ -37,6 +37,15 @@
                                             if ($key === 'birthday_at' && !empty($value)) {
                                                 print('<td>' . DatetimeHelper::formatToBirthday($value) . '</td>');
                                             }
+                                            elseif ($key === 'id') {
+                                                print(
+                                                    '<td>' . 
+                                                        '<a href="' . RequestHelper::$common_url_root . '/user_profile/view/' . $value . '">' . 
+                                                            $value . 
+                                                        '</a>' .
+                                                    '</td>'
+                                                );
+                                            }
                                             else {
                                                 print('<td>' . $value . '</td>');
                                             }

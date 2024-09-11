@@ -8,7 +8,7 @@
 
 	//$bo = $bo_factory->get(StringHelper::toPascalCase(RequestHelper::$actor_name));
     $bo = $bo_factory->get(ActorHelper::USER);
-    $do = $bo->get($_SESSION['user_id']);
+	$do = $bo->get(empty(RequestHelper::$actor_id) ? $_SESSION['user_id'] : RequestHelper::$actor_id);
 
 	/* ********************************************************
 	 * *** Lets control exectution by actor action... *********

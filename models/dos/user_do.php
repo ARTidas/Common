@@ -17,7 +17,13 @@
         public $birthday_at;
 
         public $profile_icon_file_path;
+        public $profile_small_file_path;
+        public $profile_medium_file_path;
+        public $profile_large_file_path;
         public $profile_icon_url;
+        public $profile_small_url;
+        public $profile_medium_url;
+        public $profile_large_url;
 
         /* ********************************************************
          * ********************************************************
@@ -32,7 +38,13 @@
             }
 
             $this->profile_icon_file_path    = RequestHelper::$common_file_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_icon.png';
+            $this->profile_small_file_path   = RequestHelper::$common_file_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_small.png';
+            $this->profile_medium_file_path  = RequestHelper::$common_file_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_medium.png';
+            $this->profile_large_file_path   = RequestHelper::$common_file_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_large.png';
             $this->profile_icon_url          = RequestHelper::$common_url_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_icon.png';
+            $this->profile_small_url         = RequestHelper::$common_url_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_small.png';
+            $this->profile_medium_url        = RequestHelper::$common_url_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_medium.png';
+            $this->profile_large_url         = RequestHelper::$common_url_root . '/cdn/user_profile_pictures/' . 'user_' . $this->id . '_large.png';
         }
 
     }

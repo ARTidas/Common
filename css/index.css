@@ -114,6 +114,44 @@ table a {
 
 
 
+/* Apply grayscale to all text and profile section */
+#profile {
+    color: #333; /* Dark gray for the text */
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 20px;
+    border: 1px solid #ccc; /* Light border */
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#profile div {
+    margin-bottom: 10px;
+}
+
+/* Grayscale profile photo */
+#profile div:last-child img {
+    filter: grayscale(100%);
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Styling the labels and values */
+#profile div:nth-child(odd) {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#profile div:nth-child(even) {
+    font-style: italic;
+    color: #666; /* Lighter gray for data */
+}
+
+
+
+
+
+
 
 /* Logs Container */
 .logs {

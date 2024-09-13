@@ -23,6 +23,37 @@
                             <li>apt install cmatrix</li>
                             <li>apt install rig</li>
                             <li>apt install aview</li>
+                            <li>apt install putty</li>
+                            <li>apt install python3-selenium</li>
+                            <li>apt install unzip</li>
+                            <li>apt install python3-pandas</li>
+                        </ul>
+                    </li>
+                    <li>Enable/Add a new program repository
+                        <ul>
+                            <li>add-apt-repository &lt;repository_name&gt;</li>
+                            <li>add-apt-repository universe</li>
+                        </ul>
+                    </li>
+                    <li>Download and install Debian packages
+                        <ul>
+                            <li>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</li>
+                            <li>apt-get install -y ./google-chrome-stable_current_amd64.deb</li>
+                            <li>wget https://github.com/SergeyPirogov/webdriver_manager/archive/refs/heads/master.zip -O webdriver_manager.zip
+</li>
+                            <li>unzip webdriver_manager.zip</li>
+                            <li>cd webdriver_manager-master</li>
+                            <li>python setup.py install</li>
+                        </ul>
+                    </li>
+                    <li>Download file from server to Linux workstation
+                        <ul>
+                            <li>
+                                scp -P 12201 veresz@pti.unithe.hu:/var/www/html/scripts/page_source.html /home/student/Downloads/files
+                            </li>
+                            <li>
+                                scp -P 12201 /home/student/Downloads/"sajtószoba_táblázat(Munka1).csv" veresz@pti.unithe.hu:/var/www/html/scripts/
+                            </li>
                         </ul>
                     </li>
                 </ol>

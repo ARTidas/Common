@@ -54,6 +54,9 @@
                             <li>
                                 scp -P 12201 /home/student/Downloads/"sajtószoba_táblázat(Munka1).csv" veresz@pti.unithe.hu:/var/www/html/scripts/
                             </li>
+                            <li>
+                                scp -P 12201 /home/student/Downloads/Sajtószoba-Boon.csv veresz@pti.unithe.hu:/var/www/html/scripts
+                            </li>
                         </ul>
                     </li>
                 </ol>

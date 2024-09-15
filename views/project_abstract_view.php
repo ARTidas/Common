@@ -39,6 +39,7 @@
                                 <a href="<?php print(RequestHelper::$url_root); ?>/knowledge_center_useful_link/view">Useful links</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/knowledge_center_pti_lectures/view">PTI Lectures</a>
                                 <a href="<?php print(RequestHelper::$url_root); ?>/knowledge_center_linux_commands/view">Linux commands</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/knowledge_center_python/view">Python</a>
                             </div>
                         </div>
 

@@ -24,6 +24,13 @@
                 <ol>
                     <li>export PYTHONPATH=$PYTHONPATH:/var/www/html/scripts/common</li>
                     <li>echo $PYTHONPATH</li>
+                    <li>nano /etc/profile.d/pythonpath.sh
+                        <ul><li>export PYTHONPATH=$PYTHONPATH:/var/www/html/scripts/common</li></ul>
+                    </li>
+                    <li>source /etc/profile</li>
+                    <li>nano /etc/bash.bashrc</li>
+                        <ul><li>export PYTHONPATH=$PYTHONPATH:/var/www/html/scripts/common</li></ul>
+                    <li>source /etc/bash.bashrc</li>
                 </ol>
 
                 <h2>Use your own module</h2>

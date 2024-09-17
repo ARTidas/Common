@@ -13,6 +13,20 @@
                 <h1>Linux commands</h1>
 
                 <ol>
+                    <li>
+                        <ul>
+                            <li>su</li>
+                            <li>export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</li>
+                            <li>useradd &lt;user_name&gt;< -m/li>
+                            <li>id &lt;user_name&gt;</li>
+                            <li>passwd &lt;user_name&gt;</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>ssh &lt;user_name&gt;@pti.unithe.hu -p 12201</li>
+                        </ul>
+                    </li>
                     <li>Install a program
                         <ul>
                             <li>apt install &lt;program_name&gt;</li>
@@ -46,7 +60,7 @@
                             <li>python setup.py install</li>
                         </ul>
                     </li>
-                    <li>Download file from server to Linux workstation
+                    <li>Moving file between server and workstation
                         <ul>
                             <li>
                                 scp -P 12201 veresz@pti.unithe.hu:/var/www/html/scripts/page_source.html /home/student/Downloads/files
@@ -56,6 +70,9 @@
                             </li>
                             <li>
                                 scp -P 12201 /home/student/Downloads/Sajtószoba-Boon.csv veresz@pti.unithe.hu:/var/www/html/scripts
+                            </li>
+                            <li>
+                                scp -P 12201 veresz@pti.unithe.hu:/var/www/html/scripts/page_source.html 'C:\Users\Admin\Downloads'
                             </li>
                         </ul>
                     </li>

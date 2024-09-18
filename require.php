@@ -36,6 +36,7 @@
         require(RequestHelper::$common_file_root . '/models/dos/abstract_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/user_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/map_pin_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/dormitory_map_pin_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/permission_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/user_permission_do.php');
 
@@ -77,6 +78,7 @@
     require(RequestHelper::$common_file_root . '/views/map_pin_create_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_list_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_modify_view.php');
+    require(RequestHelper::$common_file_root . '/views/dormitory_map_view_view.php');
     require(RequestHelper::$common_file_root . '/views/permission_create_view.php');
     require(RequestHelper::$common_file_root . '/views/permission_list_view.php');
     require(RequestHelper::$common_file_root . '/views/permission_modify_view.php');

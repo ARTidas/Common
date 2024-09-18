@@ -5,11 +5,13 @@
 	 * ********************************************************/
 	class ActorHelper {
 
-		const USER 			= 'User';
-		const MAP_PINS  	= 'MapPin';
-		const PERMISSION 	= 'Permission';
-        const TASK 			= 'Task';
-        const TASK_TYPE 	= 'TaskType';
+		const USER 					= 'User';
+		const MAP_PINS  			= 'MapPin';
+		const PERMISSION 			= 'Permission';
+        const TASK 					= 'Task';
+        const TASK_TYPE 			= 'TaskType';
+		const ARTICLE_COMPARISON 	= 'ArticleComparison';
+		const ARTICLE 				= 'Article';
 
 		/* ********************************************************
          * ********************************************************
@@ -281,5 +283,43 @@
 
 			return false;
 		}
+
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForArticleLink($input) {
+			if (
+				$input === 'id' ||
+				$input === 'source' ||
+				$input === 'content_uploaded_at' ||
+				$input === 'url' ||
+				$input === 'title' ||
+				$input === 'content'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForArticleLinkSugestion($input) {
+			if (
+				$input === 'uni_article_url' ||
+				$input === 'cosine_similarity' ||
+				$input === 'uni_article_title' ||
+				$input === 'uni_article_content' ||
+				$input === 'uni_article_content_uploaded_at'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
 
     }

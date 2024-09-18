@@ -18,3 +18,24 @@
     margin: 10px;
     float: left;
 }
+
+.info.legend {
+    background: white;
+    padding: 0.4em 0.5em;
+    font: 1em Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-item i {
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 0.1em;
+    display: inline-block;
+    margin-right: 0.5em;
+}

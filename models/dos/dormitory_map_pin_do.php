@@ -3,12 +3,14 @@
 	/* ********************************************************
 	 * ********************************************************
 	 * ********************************************************/
-	class MapPinDo extends AbstractDo {
+	class DormitoryMapPinDo extends AbstractDo {
 
-        public $title;
+        public $gender;
+        public $major;
+        public $class;
+        public $city;
         public $latitude;
         public $longitude;
-        public $popup_html;
 
     }
 ?>

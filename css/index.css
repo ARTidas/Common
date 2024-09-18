@@ -23,6 +23,22 @@ hr {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
+.large_link {
+    padding: 5px;
+    background-color: #444;
+    color: #ccc;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.large_link:hover {
+    background-color: #ccc;
+    color: #444;
+}
+
+
 /* Box Container */
 .box {
     background-color: #333; /* Dark gray background */

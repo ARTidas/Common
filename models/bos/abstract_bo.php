@@ -152,6 +152,18 @@
 			return $do;
 		}
 
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function delete(AbstractDo $do) {
+			LogHelper::addMessage(
+				'Deleting record for: ' . $this->actor_name .
+				', with id: #' . $do->id
+			);
+			
+			return $this->dao->delete([$do->id]);
+		}
+
 
     }
 

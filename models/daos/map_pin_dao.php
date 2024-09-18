@@ -84,6 +84,38 @@
 			}
 		}
 
+
+		/* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function getDormitoryList() {
+			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
+				SELECT
+					MAP_PINS.gender 			AS gender,
+					MAP_PINS.major 				AS major,
+					MAP_PINS.class 				AS class,
+					MAP_PINS.city 				AS city,
+					MAP_PINS.latitude 			AS latitude,
+					MAP_PINS.longitude 			AS longitude
+				FROM
+					geo.students_2024_1 MAP_PINS
+			;";
+
+			try {
+				$handler = ($this->database_connection_bo)->getConnection();
+				$statement = $handler->prepare($query_string);
+				$statement->execute();
+				
+				return $statement->fetchAll(PDO::FETCH_ASSOC);
+			}
+			catch(Exception $exception) {
+				LogHelper::addError('Error: ' . $exception->getMessage());
+
+				return false;
+			}
+		}
+
+
 		/* ********************************************************
 		 * ********************************************************
 		 * ********************************************************/

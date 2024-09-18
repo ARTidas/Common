@@ -13,16 +13,17 @@
                 <h1>Linux commands</h1>
 
                 <ol>
-                    <li>
+                    <li>Create account
                         <ul>
                             <li>su</li>
                             <li>export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</li>
-                            <li>useradd &lt;user_name&gt;< -m/li>
+                            <li>useradd &lt;user_name&gt; -m</li>
                             <li>id &lt;user_name&gt;</li>
                             <li>passwd &lt;user_name&gt;</li>
+                            <li>usermod -a -G &lt;group_name&gt; &lt;user_name&gt;</li>
                         </ul>
                     </li>
-                    <li>
+                    <li>Login into terminal
                         <ul>
                             <li>ssh &lt;user_name&gt;@pti.unithe.hu -p 12201</li>
                         </ul>

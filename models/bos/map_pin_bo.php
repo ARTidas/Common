@@ -85,6 +85,28 @@
 		}
 
 
+        /* ********************************************************
+		 * ********************************************************
+		 * ********************************************************/
+		public function getDormitoryList() {
+			$do_list = [];
+			
+			$records = $this->dao->getDormitoryList();
+
+			if (empty($records)) {
+				LogHelper::addWarning('There are no records of: ' . 'DormitoryMapPin');
+			}
+			else {
+				foreach ($records as $record) {
+					//$do_list[] = $this->do_factory->get($this->actor_name, $record);
+                    $do_list[] = $this->do_factory->get("DormitoryMapPin", $record);
+				}
+			}
+			
+			return $do_list;
+		}
+
+
     }
 
 ?>

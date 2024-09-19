@@ -22,7 +22,7 @@
 .info.legend {
     background: white;
     padding: 0.4em 0.5em;
-    font: 1em Arial, Helvetica, sans-serif;
+    font: 1.1em Arial, Helvetica, sans-serif;
     border-radius: 1em;
     padding: 1em;
 }
@@ -38,4 +38,32 @@
     border-radius: 0.1em;
     display: inline-block;
     margin-right: 0.5em;
+}
+
+#save_leaflet_map {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 40em;
+    color: white;
+    padding: 0.5em 1.2em;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 0 0.3em 1.2em rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    outline: none;
+    display: inline-block;
+}
+
+#save_leaflet_map:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    box-shadow: 0 0.5em 1.7em rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.15em);
+}
+
+#save_leaflet_map:active {
+    transform: translateY(0);
+    box-shadow: 0 0.3em 1.2em rgba(0, 0, 0, 0.2);
 }

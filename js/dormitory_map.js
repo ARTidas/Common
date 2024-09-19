@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     ).addTo(map);
 
+    
+
     function generateRandomColor() {
         return '#' + Math.floor(Math.random()*16777215).toString(16);
     }
@@ -128,22 +130,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     function addMajorColoringLegend() {
         let legend = L.control({position: 'bottomright'});
-
+    
         legend.onAdd = function () {
             let div = L.DomUtil.create('div', 'info legend');
             div.innerHTML += '<h4 style="width: 100%; text-align: center">Jelmagyarázat</h4>';
-
+    
             for (let [major, color] of majorColoring) {
                 div.innerHTML += `
                     <div class="legend-item">
-                        <i style="background: ${color};"></i> ${major}
+                        <span style="display: inline-block; width: 1.5em; height: 1.5em; background-color: ${color}; opacity: 0.8; margin-right: 0.1em;"></span>
+                        <span style="display: inline-block; width: 1.5em; height: 1.5em; background-color: ${color}; opacity: 0.6; margin-right: 0.3em;"></span>
+                        ${major}
                     </div>
                 `;
             }
-
+    
             return div;
         };
-
+    
         legend.addTo(map);
     }
 
@@ -155,4 +159,52 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 
+    document.getElementById('save_leaflet_map').addEventListener('click', function() {
+        saveLeafletMapAsImage();
+    });
+
+    function saveLeafletMapAsImage() {
+        leafletImage(map, function(err, canvas) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+    
+            let zoomLevel = map.getZoom();
+            let mapSize = {width: map.getSize().x, height: map.getSize().y};
+            let circleRadius = getRelativeRadius(zoomLevel) / Math.max(mapSize.width, mapSize.height);
+    
+            universityOfTokajGroup.eachLayer(function(layer) {
+                if (layer instanceof L.Circle) {
+                    const ctx = canvas.getContext('2d');
+                    const point = map.latLngToContainerPoint(layer.getLatLng());
+    
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, circleRadius, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = layer.options.fillColor;
+                    ctx.fill();
+                    ctx.lineWidth = layer.options.weight;
+                    ctx.strokeStyle = layer.options.color;
+                    ctx.stroke();
+                }
+            });
+    
+            // Convert the canvas to a data URL
+            var imgData = canvas.toDataURL('image/png');
+    
+            // Create a link to download the image
+            var link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'students_dormitory_map.png';
+    
+            // Trigger the download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }    
+
+
 });
+
+

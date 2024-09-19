@@ -295,7 +295,8 @@
 				$input === 'content_uploaded_at' ||
 				$input === 'url' ||
 				$input === 'title' ||
-				$input === 'content'
+				$input === 'content' ||
+				$input === 'manual_article_id_list'
 			) {
 				return true;
 			}
@@ -309,6 +310,8 @@
          * ********************************************************/
 		public static function isAttributeRequiredForArticleLinkSugestion($input) {
 			if (
+				$input === 'id' ||
+				$input === 'status' ||
 				$input === 'uni_article_url' ||
 				$input === 'cosine_similarity' ||
 				$input === 'uni_article_title' ||

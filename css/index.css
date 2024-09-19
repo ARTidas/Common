@@ -104,6 +104,23 @@ tbody tr:nth-child(even) {
     background-color: #444; /* Slightly lighter gray for even rows */
 }
 
+tbody tr.highlight {
+    background-color: #363; /* Dark gray for table rows */
+    color: #fff; /* White text for table rows */
+}
+
+tbody tr.highlight:nth-child(even) {
+    background-color: #454; /* Slightly lighter gray for even rows */
+}
+
+tbody tr.highlight:hover {
+    background-color: #595; /* Lighter gray on hover */
+    color: #fff; /* Ensure text stays white */
+}
+
+
+
+
 tbody td {
     padding: 10px;
     text-align: left;

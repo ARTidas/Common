@@ -91,7 +91,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         universityOfTokajGroup.clearLayers();
 
         for (let data of mapData) {
-            if (data["latitude"] && data["longitude"]) {
+            let correspondingCheckbox = document.getElementById(`checkbox-${data["major"]}`);
+
+            if (data["latitude"] && data["longitude"] && correspondingCheckbox && correspondingCheckbox.checked) {
                 let circle;
                 let maleCount = countsByCity.male.get(data["city"]) || 0;
                 let femaleCount = countsByCity.female.get(data["city"]) || 0;
@@ -141,6 +143,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         <span style="display: inline-block; width: 1.5em; height: 1.5em; background-color: ${color}; opacity: 0.8; margin-right: 0.1em;"></span>
                         <span style="display: inline-block; width: 1.5em; height: 1.5em; background-color: ${color}; opacity: 0.6; margin-right: 0.3em;"></span>
                         ${major}
+                        <span class="major_checkbox">
+                            <input type="checkbox" id="checkbox-${major}" name="${major}" checked />
+                        </span>
                     </div>
                 `;
             }
@@ -151,8 +156,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         legend.addTo(map);
     }
 
-    drawCircles();
     addMajorColoringLegend();
+
+    mapData.forEach(data => {
+        const checkbox = document.getElementById(`checkbox-${data["major"]}`);
+        if (checkbox) {
+            checkbox.addEventListener('change', drawCircles);
+        }
+    });
+    
+    drawCircles();
 
     map.on('zoomend', function() {
         drawCircles();

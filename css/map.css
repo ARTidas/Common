@@ -67,3 +67,9 @@
     transform: translateY(0);
     box-shadow: 0 0.3em 1.2em rgba(0, 0, 0, 0.2);
 }
+
+.major_checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: auto;
+}

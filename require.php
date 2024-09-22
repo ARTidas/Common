@@ -74,6 +74,7 @@
     require(RequestHelper::$common_file_root . '/views/knowledge_center_python_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_database_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_robotics_view_view.php');
+    require(RequestHelper::$common_file_root . '/views/knowledge_center_digital_logic_view_view.php');
     require(RequestHelper::$common_file_root . '/views/map_view_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_create_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_list_view.php');

@@ -84,6 +84,6 @@
     require(RequestHelper::$common_file_root . '/views/permission_list_view.php');
     require(RequestHelper::$common_file_root . '/views/permission_modify_view.php');
     require(RequestHelper::$common_file_root . '/views/user_permission_request_view.php');
-    require(RequestHelper::$common_file_root . '/views/user_permission_review_view.php');
+    require(RequestHelper::$common_file_root . '/views/user_permission_review_view.php')
 
 ?>

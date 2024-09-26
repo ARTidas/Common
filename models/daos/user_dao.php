@@ -184,15 +184,18 @@
 		public function getList() {
 			$query_string = "/* __CLASS__ __FUNCTION__ __FILE__ __LINE__ */
 				SELECT
-					USERS.id 					AS id,
-					USERS.email 				AS email,
-					USERS.is_active 			AS is_active,
-					USERS.created_at 			AS created_at,
-					USERS.updated_at 			AS updated_at,
-					USER_PROFILES.name 			AS name,
-					USER_PROFILES.neptun_code   AS neptun_code,
-					USER_PROFILES.phone 		AS phone,
-					LEFT(USER_PROFILES.birthday_at, 10)	AS birthday_at
+					USERS.id 									AS id,
+					USERS.email 								AS email,
+					USERS.is_active 							AS is_active,
+					USERS.created_at 							AS created_at,
+					USERS.updated_at 							AS updated_at,
+					USER_PROFILES.name 							AS name,
+					USER_PROFILES.neptun_code   				AS neptun_code,
+					USER_PROFILES.phone 						AS phone,
+					LEFT(USER_PROFILES.birthday_at, 10)			AS birthday_at,
+					USER_PROFILES.address 						AS address,
+					USER_PROFILES.tax_number 					AS tax_number,
+					USER_PROFILES.demonstrator_contract_number	AS demonstrator_contract_number
 				FROM
 					common.users USERS
 					LEFT JOIN common.user_profiles USER_PROFILES
@@ -233,7 +236,10 @@
 					USER_PROFILES.name 			AS name,
 					USER_PROFILES.neptun_code 	AS neptun_code,
 					USER_PROFILES.phone 		AS phone,
-					USER_PROFILES.birthday_at 	AS birthday_at
+					USER_PROFILES.birthday_at 	AS birthday_at,
+					USER_PROFILES.address 						AS address,
+					USER_PROFILES.tax_number 					AS tax_number,
+					USER_PROFILES.demonstrator_contract_number	AS demonstrator_contract_number
 				FROM
 					common.users USERS
 					LEFT JOIN common.user_profiles USER_PROFILES
@@ -352,14 +358,17 @@
 				INSERT INTO
 					common.user_profiles
 				SET
-					user_id 		= :user_id,
-                    name            = :name,
-					neptun_code 	= :neptun_code,
-					phone			= :phone,
-					birthday_at		= :birthday_at,
-					is_active		= 1,
-					created_at 		= NOW(),
-					updated_at 		= NOW()
+					user_id 							= :user_id,
+                    name            					= :name,
+					neptun_code 						= :neptun_code,
+					phone								= :phone,
+					birthday_at							= :birthday_at,
+					address								= :address,
+					tax_number							= :tax_number,
+					demonstrator_contract_number		= :demonstrator_contract_number,
+					is_active							= 1,
+					created_at 							= NOW(),
+					updated_at 							= NOW()
 			";
 
 			try {
@@ -370,6 +379,9 @@
 				$statement->bindValue(':neptun_code', $do->neptun_code, PDO::PARAM_STR);
 				$statement->bindValue(':phone', $do->phone, PDO::PARAM_STR);
 				$statement->bindValue(':birthday_at', $do->birthday_at, PDO::PARAM_STR);
+				$statement->bindValue(':address', $do->address, PDO::PARAM_STR);
+				$statement->bindValue(':tax_number', $do->tax_number, PDO::PARAM_STR);
+				$statement->bindValue(':demonstrator_contract_number', $do->demonstrator_contract_number, PDO::PARAM_STR);
                 $statement->execute();
         
                 return $handler->lastInsertId();

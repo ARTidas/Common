@@ -2,11 +2,14 @@
 
     if (isset($_POST['modify']) && $_POST['modify'] === 'Update') {
         //TODO: Make this abstract!!!
-        $do->name               = $_POST['name'];
-        $do->neptun_code        = $_POST['neptun_code'];
-        $do->phone              = $_POST['phone'];
-        $do->birthday_at        = $_POST['birthday_at'];
-        
+        $do->name                           = $_POST['name'];
+        $do->neptun_code                    = $_POST['neptun_code'];
+        $do->phone                          = $_POST['phone'];
+        $do->birthday_at                    = $_POST['birthday_at'];
+        $do->address                        = $_POST['address'];
+        $do->tax_number                     = $_POST['tax_number'];
+        $do->demonstrator_contract_number   = $_POST['demonstrator_contract_number'];
+
         LogHelper::addMessage('Modifying record with id: #' . $do->id);
 
         if ($bo->updateProfile($do)) {

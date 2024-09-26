@@ -77,6 +77,27 @@
 		/* ********************************************************
          * ********************************************************
          * ********************************************************/
+        public static function isAttributeRequiredForUserProfileView($input) {
+            if (
+				$input === 'name' ||
+				$input === 'neptun_code' ||
+				$input === 'phone' ||
+				$input === 'birthday_at' ||
+				$input === 'address' ||
+				$input === 'tax_number' ||
+				$input === 'demonstrator_contract_number'
+			) {
+				return true;
+			}
+
+			return false;
+        }
+
+		
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
         public static function isAttributeRequiredForArticleList($input) {
             if (
 				$input === 'class_actor' ||
@@ -323,6 +344,77 @@
 
 			return false;
 		}
+
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForTimesheetRegisterShiftForm($input) {
+			if (
+				$input === 'shift_start_at' ||
+				$input === 'shift_end_at' ||
+				$input === 'requester_name' ||
+				$input === 'description'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForTimesheetRegisterShift($input) {
+			if (
+				$input === 'shift_start_at' ||
+				$input === 'requester_name' ||
+				$input === 'description'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForTimesheetView($input) {
+			if (
+				$input === 'id' ||
+				$input === 'user_id' ||
+				$input === 'shift_start_at' ||
+				$input === 'shift_end_at' ||
+				$input === 'requester_name' ||
+				$input === 'description' ||
+				$input === 'user_name' ||
+				$input === 'user_email' ||
+				$input === 'user_neptun_code' ||
+				$input === 'user_phone'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForDemonstratorView($input) {
+			if (
+				$input === 'user_id' ||
+				$input === 'user_name' ||
+				$input === 'user_email' ||
+				$input === 'user_neptun_code' ||
+				$input === 'user_phone'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+
+		
 
 
     }

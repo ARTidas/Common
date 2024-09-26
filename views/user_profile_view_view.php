@@ -21,7 +21,7 @@
                             <section id="profile">
                         <?php
                         foreach ($this->do->do->getAttributes() as $key => $value) {
-                            if (ActorHelper::isAttributeRequiredForView($key)) {
+                            if (ActorHelper::isAttributeRequiredForUserProfileView($key)) {
                                 ?>
                                     <div><?php print($key); ?>:</div>
                                     <div><?php print($value); ?></div>
@@ -65,7 +65,7 @@
 
                             <?php
                                 foreach ($this->do->do->getAttributes() as $key => $value) {
-                                    if (ActorHelper::isAttributeRequiredForView($key)) {
+                                    if (ActorHelper::isAttributeRequiredForUserProfileView($key)) {
                                         if ($key === 'birthday_at') {
                             ?>
                                             <div>

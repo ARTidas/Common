@@ -14,14 +14,26 @@
     // If the session cookie exists, delete it
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
-        setcookie(
+        /*setcookie(
             session_name(),
             '',
-            time() - 42000,
+            time() - 86400,
             $params["path"],
             $params["domain"],
             $params["secure"],
             $params["httponly"]
+        );*/
+        setcookie(
+            session_name(),
+            '',
+            [
+                'expires' => time() - 86400,
+                'path' => '/',
+                'domain' => 'pti.unithe.hu',
+                'secure' => true, // Secure flag: only send over HTTPS
+                'httponly' => true, // HttpOnly flag: JavaScript cannot access the cookie
+                'samesite' => 'None',
+            ]
         );
     }
 
@@ -31,12 +43,24 @@
 
     // Optionally remove any user-specific cookies
     if (isset($_COOKIE['user_id'])) {
+        /*setcookie(
+            'user_id',
+            '',
+            time() - 86400,
+            "/"
+        ); // Delete the "user" cookie*/
         setcookie(
             'user_id',
             '',
-            time() - 3600,
-            "/"
-        ); // Delete the "user" cookie
+            [
+                'expires' => time() - 86400,
+                'path' => '/',
+                'domain' => 'pti.unithe.hu',
+                'secure' => true, // Secure flag: only send over HTTPS
+                'httponly' => true, // HttpOnly flag: JavaScript cannot access the cookie
+                'samesite' => 'None',
+            ]
+        );
     }
 
     header('Location: ' . RequestHelper::$url_root . '/user/login');

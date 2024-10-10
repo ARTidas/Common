@@ -18,6 +18,8 @@
         public $address;
         public $tax_number;
         public $demonstrator_contract_number;
+        public $institute;
+        public $department;
 
         public $profile_icon_file_path;
         public $profile_small_file_path;

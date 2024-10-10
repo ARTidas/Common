@@ -10,8 +10,12 @@
 		const PERMISSION 			= 'Permission';
         const TASK 					= 'Task';
         const TASK_TYPE 			= 'TaskType';
+
 		const ARTICLE_COMPARISON 	= 'ArticleComparison';
 		const ARTICLE 				= 'Article';
+
+		const DEMONSTRATOR 			= 'Demonstrator';
+		const TIMESHEET 			= 'Timesheet';
 
 		/* ********************************************************
          * ********************************************************
@@ -50,7 +54,9 @@
 				$input === 'profile_medium_file_path' ||
 				$input === 'profile_medium_url' ||
 				$input === 'profile_large_file_path' ||
-				$input === 'profile_large_url'
+				$input === 'address' ||
+				$input === 'tax_number' ||
+				$input === 'demonstrator_contract_number'
 			) {
 				return false;
 			}
@@ -85,7 +91,9 @@
 				$input === 'birthday_at' ||
 				$input === 'address' ||
 				$input === 'tax_number' ||
-				$input === 'demonstrator_contract_number'
+				$input === 'demonstrator_contract_number' ||
+				$input === 'institute' ||
+				$input === 'department'
 			) {
 				return true;
 			}
@@ -396,17 +404,64 @@
 
 			return false;
 		}
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForTimesheetPrintView($input) {
+			if (
+				$input === 'id' ||
+				$input === 'shift_start_at' ||
+				$input === 'shift_end_at' ||
+				$input === 'requester_name' ||
+				$input === 'description'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForTimesheetPrintPlainView($input) {
+			if (
+				$input === 'shift_start_at' ||
+				$input === 'requester_name' ||
+				$input === 'description'
+			) {
+				return true;
+			}
+
+			return false;
+		}
+		/* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+		public static function isAttributeRequiredForTimesheetModifyShiftForm($input) {
+			if (
+				$input === 'id' ||
+				$input === 'shift_start_at' ||
+				$input === 'shift_end_at' ||
+				$input === 'requester_name' ||
+				$input === 'description' ||
+				$input === 'is_active'
+			) {
+				return true;
+			}
+
+			return false;
+		}
 
 		/* ********************************************************
          * ********************************************************
          * ********************************************************/
 		public static function isAttributeRequiredForDemonstratorView($input) {
 			if (
-				$input === 'user_id' ||
-				$input === 'user_name' ||
-				$input === 'user_email' ||
-				$input === 'user_neptun_code' ||
-				$input === 'user_phone'
+				$input === 'id' ||
+				$input === 'name' ||
+				$input === 'email' ||
+				$input === 'phone' ||
+				$input === 'neptun_code'
 			) {
 				return true;
 			}

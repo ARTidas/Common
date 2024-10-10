@@ -21,6 +21,13 @@
                         </a>
                     </li>
                 </ol>
+
+                <h2>Useful linux commands</h2>
+
+                <ol>
+                    <li>sudo adduser $USER dialout</li>
+                    <li>sudo apt install python3-serial</li>
+                </ol>
 				
 			<?php
 		}

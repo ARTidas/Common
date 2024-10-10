@@ -34,4 +34,52 @@
             return $date->format('F j');
         }
 
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function hoursDifference($date1, $date2) {
+            // Convert the date strings to DateTime objects
+            $datetime1 = new DateTime($date1);
+            $datetime2 = new DateTime($date2);
+        
+            // Calculate the difference between the two dates
+            $interval = $datetime1->diff($datetime2);
+        
+            // Get the total number of hours (days * 24 + hours)
+            $hours = $interval->days * 24 + $interval->h + ($interval->i / 60);
+        
+            // Return the result with a precision of one decimal point
+            return round($hours, 1);
+        }
+
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function getYearAndMonth($date) {
+            // Convert the date string to a DateTime object
+            $datetime = new DateTime($date);
+            
+            // Get the year and month
+            $year       = $datetime->format('Y');
+            $month      = $datetime->format('m');
+            $month_name = $datetime->format('F'); // 'F' gives the full month name
+            
+            // Return the year and month as an array
+            //return ['year' => $year, 'month' => $month];
+            return $year . '-' . $month_name;
+        }
+
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function getCurrentMonth() {
+            return date('Y-F');
+        }
+        /* ********************************************************
+         * ********************************************************
+         * ********************************************************/
+        public static function getPreviousMonth() {
+            return date('Y-F', strtotime('first day of last month'));
+        }
+
     }

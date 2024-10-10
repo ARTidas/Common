@@ -117,7 +117,7 @@
                     $_SESSION['is_logged_in']   = true;
 
                     LogHelper::addConfirmation('Generating cookie...');
-                    setcookie(
+                    /*setcookie(
                         'user_id', 
                         $do->id, 
                         time() + (86400 * 30), // 30 days expiration time
@@ -125,6 +125,18 @@
                         "", 
                         true, // Secure flag: only send over HTTPS
                         true // HttpOnly flag: JavaScript cannot access the cookie
+                    );*/
+                    setcookie(
+                        'user_id',
+                        $do->id,
+                        [
+                            'expires' => time() + (86400 * 30), // 30 days expiration time,
+                            'path' => '/',
+                            'domain' => '*.unithe.hu',
+                            'secure' => true, // Secure flag: only send over HTTPS
+                            'httponly' => true, // HttpOnly flag: JavaScript cannot access the cookie
+                            'samesite' => 'None',
+                        ]
                     );
                     
                     $login_dao_last_insert_id = $this->dao->createLogin([

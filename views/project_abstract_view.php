@@ -46,6 +46,14 @@
                             </div>
                         </div>
 
+                        <div>
+                            <button>Trivia</button>
+                            <div>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/trivia/pti_final_exam_1/">PTI Záróvizsga 1</a>
+                                <a href="<?php print(RequestHelper::$url_root); ?>/trivia/pti_final_exam_2/">PTI Záróvizsga 2</a>
+                            </div>
+                        </div>
+
                         <!-- <div>
                             <a href="<?php print(RequestHelper::$url_root); ?>/bulletin_board/view">Bulletin board</a>
                         </div> -->

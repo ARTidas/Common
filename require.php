@@ -32,6 +32,7 @@
          * *** Data Objects ***************************************
          * ********************************************************/
         require(RequestHelper::$common_file_root . '/models/dos/view_do.php');
+        require(RequestHelper::$common_file_root . '/models/dos/trivia_view_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/user_permission_view_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/abstract_do.php');
         require(RequestHelper::$common_file_root . '/models/dos/user_do.php');
@@ -75,6 +76,7 @@
     require(RequestHelper::$common_file_root . '/views/knowledge_center_database_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_robotics_view_view.php');
     require(RequestHelper::$common_file_root . '/views/knowledge_center_digital_logic_view_view.php');
+    require(RequestHelper::$common_file_root . '/views/trivia_view_view.php');
     require(RequestHelper::$common_file_root . '/views/map_view_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_create_view.php');
     require(RequestHelper::$common_file_root . '/views/map_pin_list_view.php');

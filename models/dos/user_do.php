@@ -18,6 +18,7 @@
         public $address;
         public $tax_number;
         public $demonstrator_contract_number;
+        public $demonstrator_teaor_code;
         public $institute;
         public $department;
 

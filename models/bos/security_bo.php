@@ -23,7 +23,8 @@
             // If cookie is valid
             //      refresh the session
             //      restart the 30 day on cookie validity
-
+            
+            //if (isset($_COOKIE['PHPSESSID'])) {
             if (isset($_COOKIE['user_id'])) {
                 setcookie(
                     'user_id', 
@@ -42,6 +43,12 @@
                 $_SESSION['is_logged_in'] = true;
 
                 PermissionHelper::$user_permission_do_list = 
+                    (new BoFactory)->get(ActorHelper::PERMISSION)->getPermissionListByUserID(
+                        $user_do->id
+                    );
+
+                
+                $_SESSION['user_permission_do_list'] = 
                     (new BoFactory)->get(ActorHelper::PERMISSION)->getPermissionListByUserID(
                         $user_do->id
                     );

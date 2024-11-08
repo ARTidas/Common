@@ -195,7 +195,10 @@
 					LEFT(USER_PROFILES.birthday_at, 10)			AS birthday_at,
 					USER_PROFILES.address 						AS address,
 					USER_PROFILES.tax_number 					AS tax_number,
-					USER_PROFILES.demonstrator_contract_number	AS demonstrator_contract_number
+					USER_PROFILES.demonstrator_contract_number	AS demonstrator_contract_number,
+					USER_PROFILES.demonstrator_teaor_code		AS demonstrator_teaor_code,
+					USER_PROFILES.institute						AS institute,
+					USER_PROFILES.department					AS department
 				FROM
 					common.users USERS
 					LEFT JOIN common.user_profiles USER_PROFILES
@@ -240,6 +243,7 @@
 					USER_PROFILES.address 						AS address,
 					USER_PROFILES.tax_number 					AS tax_number,
 					USER_PROFILES.demonstrator_contract_number	AS demonstrator_contract_number,
+					USER_PROFILES.demonstrator_teaor_code		AS demonstrator_teaor_code,
 					USER_PROFILES.institute						AS institute,
 					USER_PROFILES.department					AS department
 				FROM
@@ -368,6 +372,7 @@
 					address								= :address,
 					tax_number							= :tax_number,
 					demonstrator_contract_number		= :demonstrator_contract_number,
+					demonstrator_teaor_code				= :demonstrator_teaor_code,
 					institute							= :institute,
 					department							= :department,
 					is_active							= 1,
@@ -386,6 +391,7 @@
 				$statement->bindValue(':address', $do->address, PDO::PARAM_STR);
 				$statement->bindValue(':tax_number', $do->tax_number, PDO::PARAM_STR);
 				$statement->bindValue(':demonstrator_contract_number', $do->demonstrator_contract_number, PDO::PARAM_STR);
+				$statement->bindValue(':demonstrator_teaor_code', $do->demonstrator_teaor_code, PDO::PARAM_STR);
 				$statement->bindValue(':institute', $do->institute, PDO::PARAM_STR);
 				$statement->bindValue(':department', $do->department, PDO::PARAM_STR);
                 $statement->execute();

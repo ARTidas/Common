@@ -126,6 +126,7 @@
                         true, // Secure flag: only send over HTTPS
                         true // HttpOnly flag: JavaScript cannot access the cookie
                     );*/
+                    //TODO: This does not create the COOKIE with user_id ... :(
                     setcookie(
                         'user_id',
                         $do->id,

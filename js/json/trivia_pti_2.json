@@ -1,0 +1,230 @@
+[
+    {
+        "question": "Mi jellemző a RESTful webszolgáltatásokra?",
+        "answers": ["Állapotmentes működés", "Csak POST kérések használata", "Mindig XML formátumú adatokat használnak", "Kötelező hitelesítés szükséges"]
+    },
+    {
+        "question": "Mi a valószínűsége egy szabályos dobókockával dobva, hogy 4 vagy annál kisebb számot dobunk?",
+        "answers": ["2/3", "1/3", "1/6", "5/6"]
+    },
+    {
+        "question": "Mit jelent az, hogy egy mátrix inverzibilis?",
+        "answers": ["Van inverz mátrixa.", "Minden eleme pozitív.", "Szimmetrikus mátrix.", "Nincs sajátértéke."]
+    },
+    {
+        "question": "Melyik AI technikát használják természetes nyelvfeldolgozáshoz?",
+        "answers": ["Rekurzív neurális hálózat", "Döntési fa", "Monte Carlo módszer", "Ágens-alapú modellezés"]
+    },
+    {
+        "question": "Mi az SQL JOIN művelet célja?",
+        "answers": ["Több táblából való adatok összekapcsolása", "Az adatbázis biztonságának fokozása", "Az adatok gyorsítása az indexelésen keresztül", "A tranzakciók összekapcsolása"]
+    },
+    {
+        "question": "Milyen tulajdonsággal rendelkezik egy diagonális mátrix?",
+        "answers": ["Csak a főátlójában vannak nem nulla elemek.", "Csak nulla elemeket tartalmaz.", "Csak pozitív elemeket tartalmaz.", "Az elemek szimmetrikusan helyezkednek el."]
+    },
+    {
+        "question": "Mi az alaphalmaz, ha egy eseményteret vizsgálunk?",
+        "answers": ["A lehetséges kimenetelek összessége.", "A legvalószínűbb kimenetel.", "Az összes bekövetkezett esemény.", "Csak a sikeres kimenetelek halmaza."]
+    },
+    {
+        "question": "Mi a Fibonacci-sorozat első öt tagja?",
+        "answers": ["0 1 1 2 3", "1 1 2 3 5", "1 2 3 5 8", "0 0 1 1 2 3"]
+    },
+    {
+        "question": "Melyik PHP függvény használható az adatbázis-kapcsolat lezárására?",
+        "answers": ["mysqli_close", "mysqli_connect", "mysql_select_db", "mysqli_query"]
+    },
+    {
+        "question": "Mit tesz a Singleton tervezési minta?",
+        "answers": ["Biztosítja, hogy egy osztálynak csak egy példánya legyen.", "Több példányt hoz létre dinamikusan egy osztályból.", "Elősegíti a kliens-szerver közötti adatcserét.", "Engedélyezi az osztály metódusainak tetszőleges újrahasználatát."]
+    },
+    {
+        "question": "Mi a célja a Load Balancer használatának szervereken?",
+        "answers": ["A terhelés elosztása több szerver között.", "Az adatátviteli sebesség csökkentése.", "A redundáns kapcsolatok kikapcsolása.", "A szerverek automatikus frissítése."]
+    },
+    {
+        "question": "Hogyan határozhatjuk meg egy gráf összes csúcsának fokszámát?",
+        "answers": ["A gráf éleinek kétszerese.", "A csúcsok számának négyzete.", "A csúcsok és élek számának összege.", "A csúcsok számának fele."]
+    },
+    {
+        "question": "Mi a kombinatorikában a permutáció?",
+        "answers": ["Olyan elrendezés, ahol a sorrend számít.", "Olyan elrendezés, ahol a sorrend nem számít.", "Csoportképzés azonos elemekből.", "Kizárólag kifejezések összege."]
+    },
+    {
+        "question": "Mit tesz egy trigger az adatbázisban?",
+        "answers": ["Előre meghatározott esemény hatására végrehajt egy műveletet.", "Egy táblában meghatározott mezők tartalmát rendezi.", "Megnöveli az adatbázis tranzakciók sebességét.", "Automatikusan tömöríti az adatbázis adatokat."]
+    },
+    {
+        "question": "Melyik algoritmust használnák gyakran a legkisebb út keresésére egy gráfban?",
+        "answers": ["Dijkstra algoritmus", "Bubble sort", "Depth-first search", "Linear search"]
+    },
+    {
+        "question": "Mi jellemző egy konvergens sorozatra?",
+        "answers": ["Egy adott értékhez közelít végtelen sok tag után.", "Egyre növekvő tagokat tartalmaz.", "Minden tagja ugyanaz az érték.", "Minden tagja pozitív egész szám."]
+    },
+    {
+        "question": "Melyik adattípus használható JSON adatcsere formátumban?",
+        "answers": ["String, szám, objektum, lista", "Csak számok", "Csak szövegek", "Kizárólag objektumok"]
+    },
+    {
+        "question": "Mit jelent egy gráf összefüggősége?",
+        "answers": ["Minden csúcs között létezik út.", "Csak páros számú csúcsot tartalmaz.", "Minden csúcs ugyanannyi éllel rendelkezik.", "A csúcsok és élek száma egyenlő."]
+    },
+    {
+        "question": "Mi a valószínűség-számításban a teljes eseményrendszer?",
+        "answers": ["Az összes lehetséges kimenetel halmaza.", "Csak a sikeres kimenetelek halmaza.", "Egy esemény összes kimenetelének fele.", "Az összes negatív kimenetel."]
+    },
+    {
+        "question": "Melyik webes biztonsági kockázat lehetősége merül fel, ha nem validáljuk a bemenetet?",
+        "answers": ["SQL injection", "Cache megsértés", "SSL hamisítás", "Adatbázis tömörítés"]
+    },
+    {
+        "question": "Mi az alábbiak közül egy mátrix sajátértéke?",
+        "answers": ["Egy olyan szám, amellyel a mátrix megszorozva saját magát adja.", "A mátrix minden eleme 1.", "Az elemek átlaga.", "A mátrix determinánsa."]
+    },
+    {
+        "question": "Mi jellemző egy irányítatlan gráfra?",
+        "answers": ["Az éleknek nincs iránya.", "Csak egyetlen út van a csúcsok között.", "Csak páros számú csúcsot tartalmazhat.", "Csak pozitív súlyú élekkel rendelkezik."]
+    },
+    {
+        "question": "Mi az Open/Closed elv a SOLID alapelvekben?",
+        "answers": ["Az osztályoknak nyitottnak kell lenniük bővítésre, de zártnak módosításra.", "Az osztályok csak egyetlen feladatot végezzenek el.", "A függőségeknek dinamikusan kell működniük.", "Az interfészeknek szigorúan meghatározottnak kell lenniük."]
+    },
+    {
+        "question": "Mit fejez ki a binomiális együttható?",
+        "answers": ["Hányféleképpen lehet n elemből k elemet választani.", "Az összes lehetséges sorrendet.", "A véletlenszerű kiválasztás esélyét.", "A kiválasztott elemek összegét."]
+    },
+    {
+        "question": "Melyik szabály érvényes az alábbiak közül kombinatorikai választásnál?",
+        "answers": ["A kombinációk esetén a sorrend nem számít.", "A kombinációk esetén a sorrend számít.", "A permutációk esetén a sorrend nem számít.", "A variációk esetén a választás kötelezően ismétlődő."]
+    },
+    {
+        "question": "Melyik állítás igaz a tranzakciók ACID tulajdonságaira?",
+        "answers": ["Az ACID a tranzakciók következetességét, izolálását, tartósságát és atomosságát biztosítja.", "Csak olvasási műveletekre vonatkozik.", "Csak a MySQL adatbázisokban alkalmazható.", "Csak adatmentés után van hatása."]
+    },
+    {
+        "question": "Melyik művelet segít egy mátrix inverzének megtalálásában?",
+        "answers": ["Gauss-elimináció", "Szorozás nullával", "Minden elem duplázása", "Mátrix forgatása"]
+    },
+    {
+        "question": "Mit jelent az, hogy egy gráf körmentes?",
+        "answers": ["Nem tartalmaz zárt útvonalat.", "Minden csúcsából ugyanannyi él indul.", "Csak páros számú éle van.", "Az összes éle súlyozott."]
+    },
+    {
+        "question": "Mi a feltételes valószínűség?",
+        "answers": ["Az esemény valószínűsége egy másik esemény bekövetkezése után.", "Az események valószínűségének összege.", "Az összes lehetséges kimenetel összege.", "Az esemény előtti kimenetelek száma."]
+    },
+    {
+        "question": "Melyik neurális hálózattípust használják képfelismerésben gyakran?",
+        "answers": ["Konvolúciós neurális hálózat", "Rekurzív neurális hálózat", "Feed-forward hálózat", "Autoencoder hálózat"]
+    },
+    {
+        "question": "Melyik PL/SQL kurzor használható dinamikus adatlekérdezésre?",
+        "answers": ["Explicit kurzor", "Implicit kurzor", "Statikus kurzor", "Szekvenciális kurzor"]
+    },
+    {
+        "question": "Melyik előnye a kollekcióknak PL/SQL-ben?",
+        "answers": ["Több adatelem együttes kezelését biztosítja.", "Csak egyetlen adatelem tárolására alkalmas.", "A kurzorok nélkül használható.", "Nem támogatja az iterálást."]
+    },
+    {
+        "question": "Melyik módszer biztosítja a titkosított adatátvitelt egy webalkalmazásban?",
+        "answers": ["SSL/TLS protokoll", "HTTP protokoll", "DNS protokoll", "FTP protokoll"]
+    },
+    {
+        "question": "Melyik az alapértelmezett PHP kiterjesztés?",
+        "answers": [".php", ".html", ".phtml", ".phpx"]
+    },
+    {
+        "question": "Miért hasznos a díszítő (Decorator) minta objektumorientált programozásban?",
+        "answers": ["Bővít funkciókat anélkül, hogy megváltoztatná az objektum kódját.", "Megakadályozza a felesleges objektum példányosítást.", "Automatizálja a függőségek kezelését.", "Biztosítja, hogy egy osztálynak csak egy példánya legyen."]
+    },
+    {
+        "question": "Melyik eszközt használhatjuk adatbányászat során az összetartozó adatok csoportosítására?",
+        "answers": ["Clustering", "Linear regression", "Sorting", "Mapping"]
+    },
+    {
+        "question": "Melyik a legjobb megközelítés adatok egyszerű és gyors rendezésére?",
+        "answers": ["Quick sort", "Bubble sort", "Insertion sort", "Linear search"]
+    },
+    {
+        "question": "Melyik algoritmust használják gyakran a körök gyors rajzolására a grafikában?",
+        "answers": ["MidPoint algoritmus", "Bézier algoritmus", "DDA algoritmus", "Cohen-Sutherland algoritmus"]
+    },
+    {
+        "question": "Melyik állítás igaz a NAND kapura vonatkozóan?",
+        "answers": ["A NAND kapu univerzális, bármely logikai művelet létrehozható vele.", "A NAND kapu csak két bemenettel működik.", "A NAND kapu ÉS és NEM kapukból áll.", "A NAND kapu csak akkor ad ki 1-et, ha mindkét bemenet 1."]
+    },
+    {
+        "question": "Melyik típust használnánk a PL/SQL-ben fix hosszúságú szöveg tárolására?",
+        "answers": ["CHAR", "VARCHAR2", "CLOB", "BLOB"]
+    },
+    {
+        "question": "Mi a különbség a tárolt eljárás és a tárolt függvény között?",
+        "answers": ["A függvény mindig visszaad egy értéket, az eljárás nem.", "A függvény nem lehet paraméterezett.", "Az eljárás egyetlen értékkel térhet vissza.", "A függvény nem tartalmazhat SQL utasításokat."]
+    },
+    {
+        "question": "Melyik árnyalási módszer ad folyamatos árnyékhatást egy 3D objektumon?",
+        "answers": ["Phong árnyalás", "Flat árnyalás", "Wireframe árnyalás", "Gouraud árnyalás"]
+    },
+    {
+        "question": "Melyik jellemző igaz a Big Data rendszerekre?",
+        "answers": ["A négy 'V': Volume, Velocity, Variety, Veracity.", "Csak strukturált adatokat kezelnek hatékonyan.", "Csak relációs adatbázisokat használnak.", "Céljuk a kisebb adattárolás."]
+    },
+    {
+        "question": "Melyik minta biztosítja, hogy egy osztálynak csak egy példánya legyen?",
+        "answers": ["Singleton", "Observer", "Factory", "Decorator"]
+    },
+    {
+        "question": "Melyik adatbányászati módszer alkalmas előrejelzésre?",
+        "answers": ["Regresszió", "Clustering", "Association Rule Mining", "Dimenziócsökkentés"]
+    },
+    {
+        "question": "Melyik adatcsere formátum népszerű kliens-szerver kommunikációban?",
+        "answers": ["JSON", "CSV", "XML", "YAML"]
+    },
+    {
+        "question": "Milyen típusosság jellemzi a PHP nyelvet?",
+        "answers": ["Gyenge és dinamikus típusosságú", "Erős és statikus típusosságú", "Erős és dinamikus típusosságú", "Gyenge és statikus típusosságú"]
+    },
+    {
+        "question": "Melyik megközelítés optimalizál adatsorokat síkban?",
+        "answers": ["Bézier görbe", "Hermit ív", "MidPoint algoritmus", "Cohen-Sutherland algoritmus"]
+    },
+    {
+        "question": "Miért használják a tárolt csomagokat PL/SQL-ben?",
+        "answers": ["A kód újrafelhasználhatóságáért és a logikai elemek rendszerezéséért.", "Az SQL lekérdezések gyorsításáért.", "Az adatbázis biztonságának fokozásáért.", "A tranzakciók egyszerűbb kezeléséért."]
+    },
+    {
+        "question": "Melyik SOLID alapelv biztosítja, hogy egy modulnak egy feladata legyen?",
+        "answers": ["Single Responsibility Principle", "Open/Closed Principle", "Interface Segregation Principle", "Dependency Inversion Principle"]
+    },
+    {
+        "question": "Melyik állítás igaz a tranzakciókra?",
+        "answers": ["Az ACID tulajdonságok jellemzik őket.", "Csak egyszeres műveletet tartalmazhatnak.", "Nem tartalmazhatnak hibakezelést.", "Automatikusan megszakadnak egy SELECT után."]
+    },
+    {
+        "question": "Melyik állítás igaz a szakértői rendszerekre?",
+        "answers": ["Előre meghatározott szabályokat és következtetéseket használnak.", "Mindig képesek tanulni.", "Csak gépi tanulással működnek.", "Csak strukturált adatokat kezelnek."]
+    },
+    {
+        "question": "Mi a célja a robotikában a zavarvédelemnek?",
+        "answers": ["A nem kívánt jelek szűrése és stabilitás biztosítása.", "Csak elektronikus áramkörök védelme.", "Mindig fizikai akadályok használata.", "Csak külső interferencia kivédése."]
+    },
+    {
+        "question": "Mi jellemzi a Scrum módszertant?",
+        "answers": ["Iteratív és inkrementális fejlesztés", "Hosszú tervezési fázisok", "Részletes dokumentáció minden szakaszban", "Fix időtartam nélküli projektciklus"]
+    },
+    {
+        "question": "Melyik adatstruktúra illik legjobban a B-Rep modellhez grafikában?",
+        "answers": ["Felületek topológiai reprezentációja", "Térbeli koordinátarendszer", "Raszteres képmátrix", "Hátsó lapok eltávolítása"]
+    },
+    {
+        "question": "Mit csinál a Z-Buffer algoritmus?",
+        "answers": ["Tárolja és összehasonlítja a mélységet a láthatóságért.", "Interpolálja a színeket az objektumok szélein.", "Speciális textúrázási eljárást használ.", "Eltávolítja a nem látható lapokat."]
+    },
+    {
+        "question": "Mikor használjuk a Composite mintát?",
+        "answers": ["Ha összetett objektumokat szeretnénk kezelni egyszerű elemekkel.", "Ha egy objektum egyetlen példányát biztosítjuk.", "Ha megszüntetjük az objektumok közötti függőséget.", "Ha dinamikusan bővítjük az objektum struktúráját."]
+    }
+]

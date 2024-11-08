@@ -1,0 +1,186 @@
+[
+    {
+        "question": "Mit jelent a bit rövidítés?",
+        "answers": ["Binary Digit", "Binary Term", "Binary Type", "Binary Trigger"]
+    },
+    {
+        "question": "Mi az adatbányászat célja?",
+        "answers": ["Rejtett minták és összefüggések feltárása az adatokban", "Egyes adatok törlése az adatbázisból", "Adatok automatikus mentése külső adathordozóra", "Adatok közvetlen továbbítása egy másik rendszerbe"]
+    },
+    {
+        "question": "Melyik érzékelő nem tartozik a robotikában használt szenzorok közé?",
+        "answers": ["Video-processzor", "Hőmérséklet-érzékelő", "Hangérzékelő", "Sebességérzékelő"]
+    },
+    {
+        "question": "Melyik tervezési minta tartozik a viselkedési minták közé?",
+        "answers": ["Stratégia", "Gyár", "Egyke", "Díszítő"]
+    },
+    {
+        "question": "Mit jelent a RAM rövidítés?",
+        "answers": ["Random Access Memory", "Read All Memory", "Random Archive Module", "Read Access Module"]
+    },
+    {
+        "question": "Melyik elem nem része a Big Data rendszereknek?",
+        "answers": ["Kis adatbázisok használata", "Nagy mennyiségű adat", "Gyors adatfeldolgozás", "Változatos adatforrások"]
+    },
+    {
+        "question": "Mit jelent az URL rövidítés?",
+        "answers": ["Uniform Resource Locator", "Universal Resource Link", "Unique Resource Link", "Uniform Reference Location"]
+    },
+    {
+        "question": "Melyik funkcióra NEM alkalmas a szövegbányászat?",
+        "answers": ["Képek feldolgozása", "Szentimentelemzés", "Szöveges bejegyzések kategorizálása", "Gépi fordítás"]
+    },
+    {
+        "question": "A PL/SQL nyelvben hogyan jellemezhető a kurzor?",
+        "answers": ["Adathalmazban való soronkénti lépkedést lehetővé tevő eszköz", "Automatikusan futó trigger", "Táblák közötti kapcsolat definiálása", "Adatok csoportosítása"]
+    },
+    {
+        "question": "Mit jelent az IP a számítógép hálózatokban?",
+        "answers": ["Internet Protocol", "International Program", "Internal Process", "Interactive Platform"]
+    },
+    {
+        "question": "Milyen típusú rendszerek a szakértői rendszerek?",
+        "answers": ["Tudásalapú, döntéshozatali folyamatokat támogató rendszerek", "Csak diagnosztikai célra használható rendszerek", "Egyszerű szabályok alapján működő rendszerek", "Valós idejű kommunikációs rendszerek"]
+    },
+    {
+        "question": "Mit jelent a CPU rövidítés?",
+        "answers": ["Central Processing Unit", "Central Power Unit", "Computer Processing Unit", "Control Processing Utility"]
+    },
+    {
+        "question": "Mi jellemző az objektum felületére?",
+        "answers": ["Az objektum elérhető, nyilvános metódusai és tulajdonságai", "Az objektum állapota", "Az objektum belső értékei", "Az objektumot létrehozó függvények"]
+    },
+    {
+        "question": "Melyik tényező fontos a Real-Time rendszerek esetén?",
+        "answers": ["Szabályozott és kiszámítható válaszidő", "Rugalmas válaszidő", "Korlátlan számú feladat kezelésének lehetősége", "Alacsony memóriahasználat"]
+    },
+    {
+        "question": "Mit jelent az SSD rövidítés?",
+        "answers": ["Solid State Drive", "Secure Storage Device", "Static Storage Disk", "Simple Storage Drive"]
+    },
+    {
+        "question": "Mi a PHP típusrendszerének jellemzője?",
+        "answers": ["Dinamikus típusrendszere van", "Teljesen statikus típusrendszer", "Csak egész és szöveges típusokkal dolgozik", "Teljes mértékben osztály alapú"]
+    },
+    {
+        "question": "Mit jelent a DNS rövidítés az interneten?",
+        "answers": ["Domain Name System", "Data Network Service", "Digital Name Source", "Domain Node Server"]
+    },
+    {
+        "question": "Mi az OOP nyitva-zárt elve?",
+        "answers": ["Az osztályokat nyitva kell hagyni a kiterjesztéshez, de zárva a módosításra", "Az osztályok minden belső változóját meg kell osztani más osztályokkal", "Az osztályok csak statikus adatokat tartalmazhatnak", "Az osztályokat kizárólag privát metódusokkal szabad létrehozni"]
+    },
+    {
+        "question": "Mi az SQL trigger feladata?",
+        "answers": ["Egy adatbázis esemény hatására automatikusan végrehajtódó parancs", "Adatbázis zárak kezelése", "Adatok titkosítása", "Kapcsolódás más adatbázisokhoz"]
+    },
+    {
+        "question": "Mit jelent a USB rövidítés?",
+        "answers": ["Universal Serial Bus", "Universal Service Block", "United Serial Bus", "Universal System Base"]
+    },
+    {
+        "question": "Mit tartalmaz a GOF mintagyűjtemény?",
+        "answers": ["Gyakran alkalmazott tervezési mintákat az objektumorientált fejlesztésben", "Fizikai adatbázis-szerkezeteket", "Webprogramozási útmutatókat", "Hálózatkezelési protokollokat"]
+    },
+    {
+        "question": "Mit jelent az FTP rövidítés?",
+        "answers": ["File Transfer Protocol", "Fast Transfer Program", "File Tracking Process", "File Transfer Platform"]
+    },
+    {
+        "question": "Melyik algoritmus segíthet adatbányászat során a csoportosításban?",
+        "answers": ["Klaszterezés", "Dijkstra algoritmusa", "Ford-Fulkerson algoritmus", "Monte Carlo algoritmus"]
+    },
+    {
+        "question": "Mit jelent a statikus weboldal?",
+        "answers": ["Nem változik dinamikusan, minden látogatónak ugyanazt mutatja", "Valós időben frissül", "Automatikusan új adatokat jelenít meg", "Csak felhasználói adatokat kér el"]
+    },
+    {
+        "question": "Mi a singleton minta célja?",
+        "answers": ["Egyetlen példány biztosítása egy osztályból", "Több különböző osztály létrehozása", "Objektumok kapcsolatainak létrehozása", "Objektumok adatainak titkosítása"]
+    },
+    {
+        "question": "Mit jelent a VPN rövidítés?",
+        "answers": ["Virtual Private Network", "Verified Protocol Network", "Virtual Public Network", "Virtual Protected Node"]
+    },
+    {
+        "question": "Mi jellemző az öntanuló rendszerekre?",
+        "answers": ["Tapasztalat alapján képesek fejlődni és tanulni", "Előre meghatározott szabályokat követnek", "Nem alkalmazhatók robotikában", "Kézi beállítást igényelnek minden új környezethez"]
+    },
+    {
+        "question": "Milyen típusú nyelv a PHP?",
+        "answers": ["Szerveroldali szkriptnyelv", "Fordított nyelv", "Csak kliensoldalon fut", "Csak objektumorientált nyelv"]
+    },
+    {
+        "question": "Mit jelent az AI rövidítés?",
+        "answers": ["Artificial Intelligence", "Automated Interface", "Advanced Information", "Artificial Integration"]
+    },
+    {
+        "question": "Mit jelent az SQL rövidítés?",
+        "answers": ["Structured Query Language", "Standard Quality Language", "System Query Logic", "Stored Query List"]
+    },
+    {
+        "question": "Mi a ChatGPT célja?",
+        "answers": ["Természetes nyelven történő kérdések megválaszolása", "Robotok irányítása", "Képek feldolgozása", "Hangjelzések felismerése"]
+    },
+    {
+        "question": "Mit jelent az XML rövidítés?",
+        "answers": ["eXtensible Markup Language", "eXchange Markup List", "eXtended Module Language", "eXternal Model Layout"]
+    },
+    {
+        "question": "Mi a tranzakciókezelés célja egy adatbázisban?",
+        "answers": ["Adatkonzisztencia biztosítása több művelet során", "Adatok automatikus törlése", "Tárolt eljárások írása", "Kapcsolatépítés más adatbázisokkal"]
+    },
+    {
+        "question": "Mi jellemző egy szakértői rendszerre?",
+        "answers": ["Emberi szakértelmet modellez és támogatja a döntéshozatalt", "Kizárólag valós idejű kommunikációs célra használható", "Teljesen automatikus robotirányításra való", "Csak adatok gyűjtésére szolgál"]
+    },
+    {
+        "question": "Mit jelent az API rövidítés?",
+        "answers": ["Application Programming Interface", "Automated Process Integration", "Advanced Protocol Interaction", "Application Processing Indicator"]
+    },
+    {
+        "question": "Hogyan kapcsolódik a PHP a HTML-hez?",
+        "answers": ["HTML kódba ágyazható, és a szerver oldalon fut", "Csak HTML fájlokat tud letölteni", "Csak háttérszolgáltatásokhoz használható", "Csak böngésző alapú programozáshoz jó"]
+    },
+    {
+        "question": "Mi jellemző a stratégia tervezési mintára?",
+        "answers": ["Algoritmusokat cserélhet ki futás közben", "Egyetlen konkrét algoritmust tartalmaz", "Mindig új objektumot hoz létre", "Nincs közvetlen hatása az osztályok működésére"]
+    },
+    {
+        "question": "Mit jelent az RFID rövidítés?",
+        "answers": ["Radio Frequency Identification", "Remote Frequency Interaction Device", "Radio Frequency Integration Device", "Random Field Identifier"]
+    },
+    {
+        "question": "Mi a célja a virtuális valóságnak az oktatásban?",
+        "answers": ["Gyakorlati szimulációk biztosítása a tanulás támogatására", "Szórakoztatás biztosítása", "Üzleti prezentációk egyszerűsítése", "Tárgyak fizikai vizsgálata"]
+    },
+    {
+        "question": "Mit jelent a REST API?",
+        "answers": ["Reprezentáció-transzfer architektúrával működik", "Kizárólag böngészőben fut", "Csak statikus adatokat szolgáltat", "Csak .xml formátumot használ"]
+    },
+    {
+        "question": "Mi a fő célja a TCP protokollnak?",
+        "answers": ["Megbízható adatátvitel biztosítása", "Gyors adatküldés, hibaellenőrzés nélkül", "Kép- és hangadatok közvetítése", "Csak weboldalak elérése"]
+    },
+    {
+        "question": "Mit jelent az IDE rövidítés a programozásban?",
+        "answers": ["Integrated Development Environment", "Internal Development Editor", "Interactive Data Explorer", "Integrated Digital Editor"]
+    },
+    {
+        "question": "Mi az SQL csoportosítás (GROUP BY) funkciója?",
+        "answers": ["Adatok aggregálása meghatározott mezők szerint", "Táblák összekapcsolása", "Táblák törlése", "Adatok titkosítása"]
+    },
+    {
+        "question": "Mi az UML célja?",
+        "answers": ["Rendszertervezési diagramok készítése", "Adatbázis-táblák létrehozása", "Weboldalak színezése", "Robotvezérlés kialakítása"]
+    },
+    {
+        "question": "Mit jelent a BIOS rövidítés?",
+        "answers": ["Basic Input/Output System", "Binary Integrated Operating System", "Base Input Output Solution", "Basic Internet Operating System"]
+    },
+    {
+        "question": "Mi a JSON?",
+        "answers": ["Könnyen olvasható adattárolási formátum", "Egy programozási nyelv", "Kizárólag bináris adatokat kezel", "Csak adatbázis-kezelőkben használatos"]
+    }
+]

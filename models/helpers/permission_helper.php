@@ -11,6 +11,7 @@
          * ********************************************************
          * ********************************************************/
         public static function isUserAuthorized($permission_name) {
+
             if (empty(self::$user_permission_do_list)) {
                 return false;
             }

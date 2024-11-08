@@ -54,9 +54,11 @@
 				$input === 'profile_medium_file_path' ||
 				$input === 'profile_medium_url' ||
 				$input === 'profile_large_file_path' ||
+				$input === 'profile_large_url' ||
 				$input === 'address' ||
 				$input === 'tax_number' ||
-				$input === 'demonstrator_contract_number'
+				$input === 'demonstrator_contract_number' ||
+				$input === 'demonstrator_teaor_code'
 			) {
 				return false;
 			}
@@ -92,6 +94,7 @@
 				$input === 'address' ||
 				$input === 'tax_number' ||
 				$input === 'demonstrator_contract_number' ||
+				$input === 'demonstrator_teaor_code' ||
 				$input === 'institute' ||
 				$input === 'department'
 			) {
@@ -461,7 +464,9 @@
 				$input === 'name' ||
 				$input === 'email' ||
 				$input === 'phone' ||
-				$input === 'neptun_code'
+				$input === 'neptun_code' ||
+				$input === 'institute' ||
+				$input === 'department'
 			) {
 				return true;
 			}

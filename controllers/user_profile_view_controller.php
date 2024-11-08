@@ -9,6 +9,7 @@
         $do->address                        = $_POST['address'];
         $do->tax_number                     = $_POST['tax_number'];
         $do->demonstrator_contract_number   = $_POST['demonstrator_contract_number'];
+        $do->demonstrator_teaor_code        = $_POST['demonstrator_teaor_code'];
         $do->institute                      = $_POST['institute'];
         $do->department                     = $_POST['department'];
 
